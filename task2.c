@@ -2,7 +2,7 @@
 
 int main() {
     int arr[100], n, i, j, temp;
-    printf("Enter number of elements in the array: ");
+    printf("Enter size of the array: ");
     scanf("%d", &n);
     if (n <= 0) {
         printf("Array size must be greater than 0.\n");
@@ -10,7 +10,7 @@ int main() {
     }
     printf("Enter %d elements:\n", n);
     for (i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
+        scanf("%d\n", &arr[i]);
     }
     for (i = 0; i < n - 1; i++) {
         for (j = 0; j < n - i - 1; j++) {
@@ -26,6 +26,8 @@ int main() {
         printf("%d ", arr[i]);
     }
     printf("\n");
+    printf("Maximum number : %d\n",arr[n-1]);
+    printf("Mininum number : %d\n",arr[0]);
     int max=arr[0];
     int min=arr[0];
     for (i = 1; i < n; i++) {
