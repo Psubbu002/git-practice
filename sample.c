@@ -1,15 +1,24 @@
 #include <stdio.h>
-int main() 
-{
-    int a,b;
-    printf("Enter the value of a:");
-    scanf("%d",&a);
-    printf("Enter the value of b:");
-    scanf("%d",&b);
-    a=a+b;
-    b=a-b;
-    a=a-b;
-    printf("After swaping a:%d\n",a);
-    printf("After swaping b :%d\n",b);
+unsigned long long fibonacci(int n) {
+    if (n == 0)
+        return 0;
+    else if (n == 1)
+        return 1;
+    else
+        return fibonacci(n - 1) + fibonacci(n - 2);
+}
+int main() {
+    int n, i;
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+    if(n<0)
+    {
+        printf("Enter a positive number:");
+    }
+    printf("Fibonacci Series up to %d terms:\n", n);
+    for (i = 0; i < n; i++) {
+        printf("%llu ", fibonacci(i));
+    }
+    printf("\n");
     return 0;
 }
