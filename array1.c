@@ -93,7 +93,6 @@ int main() {
     } while (choice != 0);
     return 0;
 }
-
 // 1. Reverse
 void reverseArray(int arr[], int size) {
     printf("Reversed array: ");
@@ -119,7 +118,6 @@ void deleteAtPosition(int arr[], int *size, int pos) {
     }
     printf("\n");
 }
-
 // 3. Insert at position
 void insertAtPosition(int arr[], int *size, int element, int pos) {
     if (pos < 0 || pos > *size || *size >= MAX) {
@@ -172,7 +170,6 @@ void printNonRepeated(int arr[], int size) {
     }
     printf("\n");
 }
-
 // 6. Delete duplicates
 void deleteDuplicates(int arr[], int *size) {
     int temp[MAX], index = 0;
@@ -193,7 +190,6 @@ void deleteDuplicates(int arr[], int *size) {
     }
     *size = index;
 }
-
 // 7. Perfect number
 int isPerfect(int num) {
     if (num <= 1) return 0;
@@ -213,7 +209,6 @@ void printPerfectNumbers(int arr[], int size) {
     }
     printf("\n");
 }
-
 // 8. Strong number
 int factorial(int n) {
     if (n <= 1) return 1;
@@ -237,7 +232,6 @@ void printStrongNumbers(int arr[], int size) {
     }
     printf("\n");
 }
-
 // 9. Second largest number
 void printSecondLargest(int arr[], int size) {
     if (size < 2) {
@@ -259,7 +253,6 @@ void printSecondLargest(int arr[], int size) {
         printf("Second largest element: %d\n", second);
     }
 }
-
 //10 . selection sort
 void selectionSort(int arr[], int size) {
     int i, j, minIdx, temp;
