@@ -142,7 +142,6 @@ int countDuplicates(int arr[], int size) {
     int count = 0, visited[MAX] = {0};
     for (int i = 0; i < size; i++) {
         if (visited[i]) continue;
-
         int count = 1;
         for (int j = i + 1; j < size; j++) {
             if (arr[i] == arr[j]) {
@@ -150,7 +149,6 @@ int countDuplicates(int arr[], int size) {
                 visited[j] = 1;
             }
         }
-
         if (count > 1) {
             printf("%d appears %d times\n", arr[i], count);
         }
@@ -187,7 +185,7 @@ void deleteDuplicates(int arr[], int *size) {
             }
         }
         if (!duplicate) {
-            temp[index++] = arr[i];
+            temp[index++] = arr[i]; 
         }
     }
     for (int i = 0; i < index; i++) {
