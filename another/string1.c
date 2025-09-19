@@ -103,6 +103,22 @@ void reverse(char *start, char *end) {
 void reverseWords(char *str) {
     char *word_start = NULL;
     char *temp = str;
+
+    while (*temp) {
+        if ((word_start == NULL) && !isspace(*temp)) {
+            word_start = temp;  
+        }
+        if (word_start && (isspace(*(temp + 1)) || *(temp + 1) == '\0')) {
+            reverse(word_start, temp);  
+            word_start = NULL;          
+        }
+        temp++;
+    }
+}
+
+void reversewhole(char *str) {
+    char *word_start = NULL;
+    char *temp = str;
     while (*temp) {
         if ((word_start == NULL) && !isspace(*temp)) {
             word_start = temp;
@@ -120,6 +136,26 @@ void mergeStrings(char *str1, char *str2, char *result) {
     strcat(result, " ");
     strcat(result, str2);
 }
+void countDuplicateCharacters(char *str) {
+    int freq[256] = {0};
+    int i;
+    int found = 0;
+
+    for (i = 0; str[i]; i++) {
+        unsigned char ch = (unsigned char)str[i];
+        freq[ch]++;
+    }
+    printf("Duplicate characters:\n");
+    for (i = 0; i < 256; i++) {
+        if (freq[i] > 1 && isprint(i)) {
+            printf("'%c' occurs %d times\n", i, freq[i]);
+            found = 1;
+        }
+    }
+    if (!found) {
+        printf("No duplicate characters found.\n");
+    }
+}
 int main() {
     char str1[1000], str2[1000], merged[2000];
     int choice;
@@ -136,7 +172,9 @@ int main() {
     printf("6.delete duplicate character in string\n");
     printf("7.sort string in any order\n");
     printf("8.reverse all words in string\n");
-    printf("9.merge 2 string to another string\n");
+    printf("19.merge 2 string to another string\n");
+    printf("10. Count duplicate characters\n");
+    printf("11.Reverse the words in the string\n");
     do
     {
         printf("Enter your choice:");
@@ -175,7 +213,7 @@ int main() {
                 break;
             case 8:
                 reverseWords(str1);
-                printf("Reversed words string: %s\n", str1);
+                printf("Reversed  string: %s\n", str1);
                 break;
             case 9:
                 printf("Enter second string to merge: ");
@@ -183,6 +221,13 @@ int main() {
                 str2[strcspn(str2, "\n")] = 0;
                 mergeStrings(str1, str2, merged);
                 printf("Merged string: %s\n", merged);
+                break;
+            case 10:
+            countDuplicateCharacters(str1);
+            break;
+            case 11:
+                reversewhole(str1);
+                printf("Reversed words string: %s\n", str1);
                 break;
             case 0:
                 printf("Exiting program.\n");
