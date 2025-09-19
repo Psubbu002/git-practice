@@ -9,8 +9,7 @@ void removeExtraSpaces(char *);
 void deleteDuplicates(char *);
 void sortString(char *);
 void reverseWords(char *);
-void mergeStrings(char *, char *, char *);
-
+void mergeStrings(char *, char *, char *)
 int countWords(char *str) {
     int count = 0, inWord = 0;
     while (*str) {
@@ -103,7 +102,6 @@ void reverse(char *start, char *end) {
 void reverseWords(char *str) {
     char *word_start = NULL;
     char *temp = str;
-
     while (*temp) {
         if ((word_start == NULL) && !isspace(*temp)) {
             word_start = temp;  
@@ -115,7 +113,6 @@ void reverseWords(char *str) {
         temp++;
     }
 }
-
 void reversewhole(char *str) {
     char *word_start = NULL;
     char *temp = str;
@@ -140,7 +137,6 @@ void countDuplicateCharacters(char *str) {
     int freq[256] = {0};
     int i;
     int found = 0;
-
     for (i = 0; str[i]; i++) {
         unsigned char ch = (unsigned char)str[i];
         freq[ch]++;
