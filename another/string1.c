@@ -172,7 +172,7 @@ int main() {
     printf("6.delete duplicate character in string\n");
     printf("7.sort string in any order\n");
     printf("8.reverse all words in string\n");
-    printf("19.merge 2 string to another string\n");
+    printf("9.merge 2 string to another string\n");
     printf("10. Count duplicate characters\n");
     printf("11.Reverse the words in the string\n");
     do
