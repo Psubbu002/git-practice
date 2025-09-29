@@ -9,7 +9,8 @@ int main()
   getchar();
   ch = getchar();
   j = 0;
-  for (int i = 0; str[i] != '\0'; i++) {
+  for (int i = 0; str[i] != '\0'; i++) 
+  {
     if (str[i] == ch)
       ind[j++] = i;
   }

@@ -3,12 +3,15 @@
 #include <ctype.h>
 int isPalindrome(char str[], int start, int end)
 {
-    while (start < end) {
-        if (!isalnum(str[start])) {
+    while (start < end) 
+    {
+        if (!isalnum(str[start])) 
+        {
             start++;
             continue;
         }
-        if (!isalnum(str[end])) {
+        if (!isalnum(str[end])) 
+        {
             end--;
             continue;
         }

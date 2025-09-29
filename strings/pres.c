@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<string.h>
-int main(){
+int main()
+{
     char greet[]="cisco1";
     char greet1[]={'c','i','s','c','o','\0'};
     char greeting[10];
@@ -34,7 +35,8 @@ int main(){
     printf("%s", s1);
     char s2[] = "Hello, Geeks, C!";
     char *t = strtok(s2, ", ");//splits string into tokens
-    while (t != NULL) {
+    while (t != NULL) 
+    {
         printf("%s\n", t);
         t = strtok(NULL, ", ");
     }

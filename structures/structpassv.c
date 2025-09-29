@@ -4,7 +4,8 @@ struct rectangle{
    double area;
 };
 int area(struct rectangle);
-int main(){
+int main()
+{
    struct rectangle r;
    r.len = 10.50; 
    r.brd = 20.5;

@@ -19,7 +19,8 @@ int main()
     }
     printf("Enter the key element:\n");
     scanf("%d",&key);
-     while (low <= high) {
+     while (low <= high) 
+     {
         int mid = (low + high) / 2;
         int i = mid / n; 
         int j = mid % n; 
@@ -38,7 +39,8 @@ int main()
             high = mid - 1;
         }
      }
-    if (!found) {
+    if (!found) 
+    {
         printf("Element not found\n");
     }
     return 0;

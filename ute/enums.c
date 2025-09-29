@@ -1,5 +1,6 @@
 #include <stdio.h>
-enum Day {
+enum Day 
+{
     SUNDAY,     // 0
     MONDAY,     // 1
     TUESDAY,    // 2
@@ -8,12 +9,12 @@ enum Day {
     FRIDAY,     // 5
     SATURDAY    // 6
 };
-int main() {
+int main() 
+{
     enum Day today = WEDNESDAY;
-
-    if (today == WEDNESDAY) {
+    if (today == WEDNESDAY) 
+    {
         printf("Midweek!\n");
     }
-
     return 0;
 }

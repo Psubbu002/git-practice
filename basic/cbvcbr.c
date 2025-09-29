@@ -10,8 +10,8 @@ int main( ) {
     //printf("enter a number:");
     //scanf("%d",&a);
     changeValue(a);
-    printf("using call by value a = %d\n", a);  // Output: using call by value a = 8
+    printf("using call by value a = %d\n", a);  
     change(&a);
-    printf("using call by reference a = %d\n", a);  // Output: using call by reference a = 5
+    printf("using call by reference a = %d\n", a);  
     return 0;
 }

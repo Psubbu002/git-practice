@@ -26,26 +26,33 @@ int isEmpty(struct Stack* stack)
 {
     return stack->top < 0;
 }
-int push(struct Stack* stack, int x) {
-    if (isFull(stack)) {
+int push(struct Stack* stack, int x) 
+{
+    if (isFull(stack)) 
+    {
         printf("Stack Overflow\n");
         return 0;
     }
-    else{
+    else
+    {
         printf("The element pushed:%d\n",x);
     }
     stack->a[++stack->top] = x;
     return 1;
 }
-int pop(struct Stack* stack) {
-    if (isEmpty(stack)) {
+int pop(struct Stack* stack) 
+{
+    if (isEmpty(stack)) 
+    {
         printf("Stack Underflow\n");
         return 0;
     }
     return stack->a[stack->top--];
 }
-int peek(struct Stack* stack) {
-    if (isEmpty(stack)) {
+int peek(struct Stack* stack) 
+{
+    if (isEmpty(stack)) 
+    {
         printf("Stack is Empty\n");
         return 0;
     }
@@ -61,7 +68,8 @@ int main()
     printf("%d popped from stack\n", pop(s));
     printf("Top element is: %d\n", peek(s));
     printf("Elements present in stack: ");
-    while (!isEmpty(s)) {
+    while (!isEmpty(s)) 
+    {
         printf("%d ", peek(s));
         pop(s);
     }

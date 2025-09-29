@@ -21,7 +21,8 @@ int main()
      {
         for(int j=0;j<n;j++)
         {
-            if (arr[i][j] == key) {
+            if (arr[i][j] == key) 
+            {
                 printf("Element found at index (%d,%d) \n",i,j);
                 found = 1;
                 break;  
@@ -32,7 +33,8 @@ int main()
             break;
         }
      }
-    if (!found) {
+    if (!found) 
+    {
         printf("Element not found\n");
     }
     return 0;

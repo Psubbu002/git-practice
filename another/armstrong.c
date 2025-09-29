@@ -1,18 +1,22 @@
  #include <stdio.h>
-int main() {
+int main() 
+{
     int n, q, rem, result = 0, count = 0;
     printf("Enter Number: ");
     scanf("%d", &n);
     q = n;
+    //count number of digits
     while(q != 0) {
         count++;
         q = q / 10;
     }
     q = n;
+    //count sum of power of digits
     while(q != 0) {
         rem = q % 10;
         int mul = 1;  
-        for(int i = 1; i <= count; i++) {
+        for(int i = 1; i <= count; i++) 
+        {
             mul *= rem;
         }
         result += mul;  

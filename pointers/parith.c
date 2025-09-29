@@ -1,5 +1,6 @@
 #include <stdio.h>
-int main() {
+int main() 
+{
     int arr[20];
     int n;
     printf("Enter the size of the element:");

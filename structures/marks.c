@@ -1,11 +1,13 @@
 #include <stdio.h>
-struct Subjects {
+struct Subjects 
+{
     float physics;
     float chemistry;
     float maths;
     float biology;
 };
-struct Student {
+struct Student 
+{
     char name[50];
     int roll;
     struct Subjects sub; 

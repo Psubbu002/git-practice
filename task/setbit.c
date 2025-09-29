@@ -1,19 +1,22 @@
 #include <stdio.h>
-int countBits(int n) {
+int countBits(int n) 
+{
     int count = 0;
-    while (n) {
+    while (n) 
+    {
         count += (n & 1);
         n >>= 1;
     }
     return count;
 }
-int main() {
-    int n;
+int main() 
+{
+    int n,k;
     printf("Input an integer value:");
     scanf("%d",&n);
     printf("Set bits = %d\n", countBits(n));
 
-    int k = 1; // toggle 1st bit (from right)
+    k = 1; // toggle 1st bit (from right)
     n = n ^ (1 << k);
     printf("Result = %d\n", n);
 

@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
-union Data {
+union Data 
+{
     int i;
     float f;
     char str[20];
 };
-struct Node {
+struct Node 
+{
     int type;           
     union Data data;   
     struct Node* next;  
@@ -27,13 +29,16 @@ int main()
     struct Node* current = head;
     while (current != NULL) 
     {
-        if (current->type == 1) {
+        if (current->type == 1) 
+        {
             printf("Integer: %d\n", current->data.i);
         } 
-        else if (current->type == 2) {
+        else if (current->type == 2) 
+        {
             printf("Float: %.2f\n", current->data.f);
         } 
-        else if (current->type == 3) {
+        else if (current->type == 3) 
+        {
             printf("String: %s\n", current->data.str);
         }
         current = current->next;

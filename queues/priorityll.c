@@ -1,26 +1,32 @@
 #include <stdio.h>
 #include <stdlib.h>
-typedef struct node {
+typedef struct node 
+{
     int data;
     int priority;
     struct node* next;
 } Node;
-Node* newNode(int d, int p) {
+Node* newNode(int d, int p) 
+{
     Node* temp = (Node*)malloc(sizeof(Node));
     temp->data = d;
     temp->priority = p;
     temp->next = NULL;
     return temp;
 }
-int peek(Node* head) {
-    if (head == NULL) {
+int peek(Node* head) 
+{
+    if (head == NULL) 
+    {
         printf("Queue is empty.\n");
         return -1;
     }
     return head->data;
 }
-Node* pop(Node* head) {
-    if (head == NULL) {
+Node* pop(Node* head) 
+{
+    if (head == NULL) 
+    {
         printf("Queue is empty.\n");
         return NULL;
     }
@@ -29,14 +35,19 @@ Node* pop(Node* head) {
     free(temp);
     return head;
 }
-Node* push(Node* head, int d, int p) {
+Node* push(Node* head, int d, int p) 
+{
     Node* start = head;
     Node* temp = newNode(d, p);
-    if (head == NULL || head->priority > p) {
+    if (head == NULL || head->priority > p) 
+    {
         temp->next = head;
         head = temp;
-    } else {
-        while (start->next != NULL && start->next->priority < p) {
+    } 
+    else 
+    {
+        while (start->next != NULL && start->next->priority < p) 
+        {
             start = start->next;
         }
         temp->next = start->next;
@@ -44,23 +55,28 @@ Node* push(Node* head, int d, int p) {
     }
     return head;
 }
-int isEmpty(Node* head) {
+int isEmpty(Node* head) 
+{
     return (head == NULL);
 }
-void display(Node* head) {
-    if (head == NULL) {
+void display(Node* head) 
+{
+    if (head == NULL) 
+    {
         printf("Queue is empty.\n");
         return;
     }
     Node* temp = head;
     printf("Queue elements (data:priority):\n");
-    while (temp != NULL) {
+    while (temp != NULL) 
+    {
         printf("%d:%d -> ", temp->data, temp->priority);
         temp = temp->next;
     }
     printf("NULL\n");
 }
-int main() {
+int main() 
+{
     Node* pq = NULL;
     int choice, data, priority;
     printf("--- Priority Queue Menu ---\n");
@@ -69,10 +85,12 @@ int main() {
     printf("3. Peek\n");
     printf("4. Display\n");
     printf("5. Exit\n");
-    while (1) {
+    while (1) 
+    {
         printf("Enter your choice: ");
         scanf("%d", &choice);
-        switch (choice) {
+        switch (choice) 
+        {
             case 1:
                 printf("Enter data: ");
                 scanf("%d", &data);
@@ -81,17 +99,23 @@ int main() {
                 pq = push(pq, data, priority);
                 break;
             case 2:
-                if (!isEmpty(pq)) {
+                if (!isEmpty(pq)) 
+                {
                     printf("Deleted element: %d\n", peek(pq));
                     pq = pop(pq);
-                } else {
+                } 
+                else 
+                {
                     printf("Queue is empty.\n");
                 }
                 break;
             case 3:
-                if (!isEmpty(pq)) {
+                if (!isEmpty(pq)) 
+                {
                     printf("Element at front: %d\n", peek(pq));
-                } else {
+                } 
+                else 
+                {
                     printf("Queue is empty.\n");
                 }
                 break;
@@ -100,7 +124,8 @@ int main() {
                 break;
             case 5:
                 printf("Exiting...\n");
-                while (!isEmpty(pq)) {
+                while (!isEmpty(pq)) 
+                {
                     pq = pop(pq);
                 }
                 return 0;

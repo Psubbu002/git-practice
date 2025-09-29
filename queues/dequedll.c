@@ -1,113 +1,144 @@
 #include <stdio.h>
 #include <stdlib.h>
-struct Node {
+struct Node 
+{
     int data;
     struct Node *prev, *next;
 };
-struct Deque {
+struct Deque 
+{
     struct Node *front, *rear;
     int size;
 };
-struct Deque* createDeque() {
+struct Deque* createDeque() 
+{
     struct Deque* dq = (struct Deque*)malloc(sizeof(struct Deque));
     dq->front = dq->rear = NULL;
     dq->size = 0;
     return dq;
 }
-int isEmpty(struct Deque* dq) { 
+int isEmpty(struct Deque* dq) 
+{ 
     return dq->front == NULL; 
 }
-int getSize(struct Deque* dq) { 
+int getSize(struct Deque* dq) 
+{ 
     return dq->size; 
 }
-void insertFront(struct Deque* dq, int data) {
+void insertFront(struct Deque* dq, int data) 
+{
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     newNode->data = data;
     newNode->prev = NULL;
     newNode->next = dq->front;
-    if (isEmpty(dq)) {
+    if (isEmpty(dq)) 
+    {
         dq->front = dq->rear = newNode;
-    } else {
+    } 
+    else 
+    {
         dq->front->prev = newNode;
         dq->front = newNode;
     }
     dq->size++;
     printf("%d inserted at front.\n", data);
 }
-void insertRear(struct Deque* dq, int data) {
+void insertRear(struct Deque* dq, int data) 
+{
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     newNode->data = data;
     newNode->next = NULL;
     newNode->prev = dq->rear;
-    if (isEmpty(dq)) {
+    if (isEmpty(dq)) 
+    {
         dq->front = dq->rear = newNode;
-    } else {
+    } 
+    else 
+    {
         dq->rear->next = newNode;
         dq->rear = newNode;
     }
     dq->size++;
     printf("%d inserted at rear.\n", data);
 }
-void deleteFront(struct Deque* dq) {
-    if (isEmpty(dq)) {
+void deleteFront(struct Deque* dq) 
+{
+    if (isEmpty(dq)) 
+    {
         printf("Underflow: Deque is empty.\n");
         return;
     }
     struct Node* temp = dq->front;
     int removed = temp->data;
     dq->front = dq->front->next;
-    if (dq->front) {
+    if (dq->front) 
+    {
         dq->front->prev = NULL;
-    } else {
+    } 
+    else 
+    {
         dq->rear = NULL;
     }
     free(temp);
     dq->size--;
     printf("%d deleted from front.\n", removed);
 }
-void deleteRear(struct Deque* dq) {
-    if (isEmpty(dq)) {
+void deleteRear(struct Deque* dq) 
+{
+    if (isEmpty(dq)) 
+    {
         printf("Underflow: Deque is empty.\n");
         return;
     }
     struct Node* temp = dq->rear;
     int removed = temp->data;
     dq->rear = dq->rear->prev;
-    if (dq->rear) {
+    if (dq->rear) 
+    {
         dq->rear->next = NULL;
-    } else {
+    }
+    else 
+    {
         dq->front = NULL;
     }
     free(temp);
     dq->size--;
     printf("%d deleted from rear.\n", removed);
 }
-int getFront(struct Deque* dq) {
+int getFront(struct Deque* dq) 
+{
     return isEmpty(dq) ? -1 : dq->front->data;
 }
-int getRear(struct Deque* dq) {
+int getRear(struct Deque* dq) 
+{
     return isEmpty(dq) ? -1 : dq->rear->data;
 }
-void clear(struct Deque* dq) {
-    while (!isEmpty(dq)) {
+void clear(struct Deque* dq) 
+{
+    while (!isEmpty(dq)) 
+    {
         deleteFront(dq);
     }
     printf("Deque cleared.\n");
 }
-void display(struct Deque* dq) {
-    if (isEmpty(dq)) {
+void display(struct Deque* dq) 
+{
+    if (isEmpty(dq)) 
+    {
         printf("Deque is empty.\n");
         return;
     }
     struct Node* current = dq->front;
     printf("Deque elements: ");
-    while (current != NULL) {
+    while (current != NULL) 
+    {
         printf("%d ", current->data);
         current = current->next;
     }
     printf("\n");
 }
-int main() {
+int main() 
+{
     struct Deque* dq = createDeque();
     int choice, element;
     printf("\n--- Deque Menu ---\n");
@@ -121,7 +152,8 @@ int main() {
     printf("8. Display deque\n");
     printf("9. Clear deque\n");
     printf("10. Exit\n");
-    while (1) {
+    while (1) 
+    {
         printf("Enter your choice: ");
         scanf("%d", &choice);
         switch (choice) {

@@ -2,14 +2,16 @@
 #include <stdbool.h>
 #include <string.h>
 #include <ctype.h>
-bool isPrime(int num) {
+bool isPrime(int num) 
+{
     if (num <= 1)
         return false;
     if (num == 2)
         return true;
     if (num % 2 == 0)
         return false;
-    for (int i = 3; i * i <= num; i += 2) {
+    for (int i = 3; i * i <= num; i += 2) 
+    {
         if (num % i == 0)
             return false;
     }
@@ -25,7 +27,8 @@ int factorial(int num1)
         return num1*factorial(num1-1);
     }
 }
-int main() {
+int main() 
+{
     int number;
     char str[1000];
     int vowels=0;
@@ -41,9 +44,11 @@ int main() {
     printf("the factorial of %d is %d\n",number,fact);
     printf("Enter a string: ");
     scanf(" %[^\n]", str); 
-    for (int i = 0; str[i] != '\0'; i++) {
+    for (int i = 0; str[i] != '\0'; i++) 
+    {
         char ch = tolower(str[i]);
-        if (ch >= 'a' && ch <= 'z') { 
+        if (ch >= 'a' && ch <= 'z') 
+        { 
             if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
                 vowels++;
             else

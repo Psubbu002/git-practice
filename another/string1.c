@@ -9,23 +9,30 @@ void removeExtraSpaces(char *);
 void deleteDuplicates(char *);
 void sortString(char *);
 void reverseWords(char *);
-void mergeStrings(char *, char *, char *)
-int countWords(char *str) {
+void mergeStrings(char *, char *, char *);
+int countWords(char *str) 
+{
     int count = 0, inWord = 0;
-    while (*str) {
-        if (!isspace(*str) && inWord == 0) {
+    while (*str) 
+    {
+        if (!isspace(*str) && inWord == 0) 
+        {
             inWord = 1;
             count++;
-        } else if (isspace(*str)) {
+        } 
+        else if (isspace(*str)) 
+        {
             inWord = 0;
         }
         str++;
     }
     return count;
 }
-int countVowels(char *str) {
+int countVowels(char *str) 
+{
     int count = 0;
-    while (*str) {
+    while (*str) 
+    {
         char c = tolower(*str);
         if (c=='a'||c=='e'||c=='i'||c=='o'||c=='u')
             count++;
@@ -33,9 +40,11 @@ int countVowels(char *str) {
     }
     return count;
 }
-int isPalindrome(char *str) {
+int isPalindrome(char *str) 
+{
     int left = 0, right = strlen(str) - 1;
-    while (left < right) {
+    while (left < right) 
+    {
         while (left < right && !isalnum(str[left])) left++;
         while (left < right && !isalnum(str[right])) right--;
         if (tolower(str[left]) != tolower(str[right]))
@@ -45,23 +54,31 @@ int isPalindrome(char *str) {
     }
     return 1;
 }
-void deleteChar(char *str, char ch) {
+void deleteChar(char *str, char ch) 
+{
+
     int i, j = 0;
-    for (i = 0; str[i]; i++) {
+    for (i = 0; str[i]; i++) 
+    {
         if (str[i] != ch)
             str[j++] = str[i];
     }
     str[j] = '\0';
 }
-void removeExtraSpaces(char *str) {
+void removeExtraSpaces(char *str) 
+{
     int i = 0, j = 0;
     int space = 0;
     while (isspace(str[i])) i++; 
-    for (; str[i]; i++) {
-        if (!isspace(str[i])) {
+    for (; str[i]; i++) 
+    {
+        if (!isspace(str[i])) 
+        {
             str[j++] = str[i];
             space = 0;
-        } else if (!space) {
+        } 
+        else if (!space) 
+        {
             str[j++] = ' ';
             space = 1;
         }
@@ -69,22 +86,29 @@ void removeExtraSpaces(char *str) {
     if (j > 0 && str[j-1] == ' ') j--; 
     str[j] = '\0';
 }
-void deleteDuplicates(char *str) {
+void deleteDuplicates(char *str) 
+{
     int hash[256] = {0};
     int i, j = 0;
-    for (i = 0; str[i]; i++) {
-        if (!hash[(unsigned char)str[i]]) {
+    for (i = 0; str[i]; i++) 
+    {
+        if (!hash[(unsigned char)str[i]]) 
+        {
             hash[(unsigned char)str[i]] = 1;
             str[j++] = str[i];
         }
     }
     str[j] = '\0';
 }
-void sortString(char *str) {
+void sortString(char *str) //bubble sort
+{
     int len = strlen(str);
-    for (int i = 0; i < len-1; i++) {
-        for (int j = i+1; j < len; j++) {
-            if (str[i] > str[j]) {
+    for (int i = 0; i < len-1; i++) 
+    {
+        for (int j = i+1; j < len; j++) 
+        {
+            if (str[i] > str[j]) 
+            {
                 char temp = str[i];
                 str[i] = str[j];
                 str[j] = temp;
@@ -92,35 +116,45 @@ void sortString(char *str) {
         }
     }
 }
-void reverse(char *start, char *end) {
-    while (start < end) {
+void reverse(char *start, char *end) 
+{
+    while (start < end) 
+    {
         char temp = *start;
         *start++ = *end;
         *end-- = temp;
     }
 }
-void reverseWords(char *str) {
+void reverseWords(char *str) 
+{
     char *word_start = NULL;
     char *temp = str;
-    while (*temp) {
-        if ((word_start == NULL) && !isspace(*temp)) {
+    while (*temp) 
+    {
+        if ((word_start == NULL) && !isspace(*temp)) 
+        {
             word_start = temp;  
         }
-        if (word_start && (isspace(*(temp + 1)) || *(temp + 1) == '\0')) {
+        if (word_start && (isspace(*(temp + 1)) || *(temp + 1) == '\0')) 
+        {
             reverse(word_start, temp);  
             word_start = NULL;          
         }
         temp++;
     }
 }
-void reversewhole(char *str) {
+void reversewhole(char *str) 
+{
     char *word_start = NULL;
     char *temp = str;
-    while (*temp) {
-        if ((word_start == NULL) && !isspace(*temp)) {
+    while (*temp) 
+    {
+        if ((word_start == NULL) && !isspace(*temp)) 
+        {
             word_start = temp;
         }
-        if (word_start && (isspace(*(temp+1)) || *(temp+1) == '\0')) {
+        if (word_start && (isspace(*(temp+1)) || *(temp+1) == '\0')) 
+        {
             reverse(word_start, temp);
             word_start = NULL;
         }
@@ -128,31 +162,38 @@ void reversewhole(char *str) {
     }
     reverse(str, temp - 1); 
 }
-void mergeStrings(char *str1, char *str2, char *result) {
+void mergeStrings(char *str1, char *str2, char *result) 
+{
     strcpy(result, str1);
     strcat(result, " ");
     strcat(result, str2);
 }
-void countDuplicateCharacters(char *str) {
+void countDuplicateCharacters(char *str) 
+{
     int freq[256] = {0};
     int i;
     int found = 0;
-    for (i = 0; str[i]; i++) {
+    for (i = 0; str[i]; i++) 
+    {
         unsigned char ch = (unsigned char)str[i];
         freq[ch]++;
     }
     printf("Duplicate characters:\n");
-    for (i = 0; i < 256; i++) {
-        if (freq[i] > 1 && isprint(i)) {
+    for (i = 0; i < 256; i++) 
+    {
+        if (freq[i] > 1 && isprint(i)) 
+        {
             printf("'%c' occurs %d times\n", i, freq[i]);
             found = 1;
         }
     }
-    if (!found) {
+    if (!found) 
+    {
         printf("No duplicate characters found.\n");
     }
 }
-int main() {
+int main() 
+{
     char str1[1000], str2[1000], merged[2000];
     int choice;
     char ch;
@@ -176,7 +217,8 @@ int main() {
         printf("Enter your choice:");
         scanf("%d",&choice);
         getchar();
-        switch(choice) {
+        switch(choice) 
+        {
             case 1:
                 printf("Word count: %d\n", countWords(str1));
                 break;

@@ -1,23 +1,28 @@
 #include <stdio.h>
 #define MAX 100
-void copy(char *src, char *dest) {
+void copy(char *src, char *dest) 
+{
     while (*dest++= *src++ );
 }
-int findLen(char* src) {
+int findLen(char* src) 
+{
   	if (!*src) return 0;
   	return 1 + findLen(src + 1);
 }
-void concat(char *src, char *src2) {
+void concat(char *src, char *src2) 
+{
     while (*src)
         src++;  
-    while (*src2) {
+    while (*src2) 
+    {
         *src = *src2;
         src++;          
         src2++;         
     }
     *src = '\0';
 }
-int main() {
+int main() 
+{
     char src[20];
     char dest[50];
     char src2[20];
@@ -41,8 +46,10 @@ int main() {
     getchar(); 
     scanf("%s", ptr2);
     printf("string1: %s\nstring2: %s\n", ptr1, ptr2);
-    for (int i= 0; (*(ptr1 + i)) != '\0'; i++) {
-        if (*(ptr1 + i) != *(ptr2 + i)) {
+    for (int i= 0; (*(ptr1 + i)) != '\0'; i++) 
+    {
+        if (*(ptr1 + i) != *(ptr2 + i)) 
+        {
             flag = 0;
             break;
         }

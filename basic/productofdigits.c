@@ -4,9 +4,12 @@ int main()
     int n,q,rem,product=1;
     printf("Enter a Number: ");
     scanf("%d",&n);
-    if(n == 0) {
+    if(n == 0) 
+    {
         product = 0;   // special case
-    } else {
+    } 
+    else 
+    {
         if(n < 0) n = -n;  // handle negative numbers
         q = n;
         while(q != 0)

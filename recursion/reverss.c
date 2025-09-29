@@ -1,5 +1,6 @@
 #include <stdio.h>
-void reverse_ptr(char *start, char *end) {
+void reverse_ptr(char *start, char *end) 
+{
     if (start >= end)
         return;
     char temp = *start;
@@ -13,7 +14,8 @@ int main() {
     char *end = str;
     printf("enter a string:");
     scanf("%s",str);
-    while (*end != '\0') {
+    while (*end != '\0') 
+    {
         end++;
     }
     end--; 

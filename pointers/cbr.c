@@ -1,12 +1,14 @@
 #include <stdio.h>
-int swap(int *x, int *y){
+int swap(int *x, int *y)
+{
    int z;
    z = *x;   
    *x = *y;  
    *y = z;   
    return 0;
 }
-int main(){
+int main()
+{
    int a = 10;
    int b = 20;
    printf("Before swap, value of a: %d\n", a );		

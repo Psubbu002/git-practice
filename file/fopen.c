@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-int main() {
+int main() 
+{
     FILE* fptr1,*fptr2;
 
     //fptr1 = fopen("file.txt", "r");

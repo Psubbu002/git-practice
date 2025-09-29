@@ -16,7 +16,8 @@ int main()
     third->data = 3;
     third->next = NULL;
     struct Node* current = head;
-    while (current != NULL) {
+    while (current != NULL) 
+    {
         printf("%d -> ", current->data);
         current = current->next;
     }

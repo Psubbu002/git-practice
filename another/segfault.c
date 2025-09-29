@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-int main() {
+int main() 
+{
     int *ptr = (int *)malloc(sizeof(int));
-    if (ptr == NULL) {
+    if (ptr == NULL) 
+    {
         printf("Memory allocation failed\n");
         return 1;
     }
