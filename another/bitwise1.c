@@ -1,20 +1,28 @@
 #include <stdio.h>
-int main() {
-    unsigned int a = 5;   // 0000 0101
-    unsigned int b = 9;   // 0000 1001
-    printf("a = %u (0x%X)\n", a, a);
-    printf("b = %u (0x%X)\n\n", b, b);
-    unsigned int and_result = a & b;
-    printf("a & b = %u (0x%X)\n", and_result, and_result);  // 0000 0001 => 1
-    unsigned int or_result = a | b;
-    printf("a | b = %u (0x%X)\n", or_result, or_result);    // 0000 1101 => 13
-    unsigned int xor_result = a ^ b;
-    printf("a ^ b = %u (0x%X)\n", xor_result, xor_result);  // 0000 1100 => 12
-    unsigned int not_a = ~a;
-    printf("~a = %u (0x%X)\n", not_a, not_a);               
-    unsigned int left_shift = a << 1;
-    printf("a << 1 = %u (0x%X)\n", left_shift, left_shift); // 0000 1010 => 10
-    unsigned int right_shift = a >> 1;
-    printf("a >> 1 = %u (0x%X)\n", right_shift, right_shift); // 0000 0010 => 2
+int main() 
+{
+    unsigned int a = 8;   // 0000 1000
+    int n = 3;
+    printf("Initial value of a = %u \n\n", a);
+    // Set the nth bit
+    a |= (1 << n);
+    printf("After setting the %dth bit: %u\n", n, a);
+    // Clear the nth bit
+    a &= ~(1 << n);
+    printf("After clearing the %dth bit: %u\n", n, a);
+    // Toggle the 1st bit
+    a ^= (1 << 1);
+    printf("After toggling the 1st bit: %u\n", a);
+    // Check if the nth bit is set
+    if (a & (1 << n)) 
+    {
+        printf("Bit %d is SET.\n", n);
+        printf("Value of a: %u\n", a);
+    } 
+    else 
+    {
+        printf("Bit %d is NOT set.\n", n);
+        printf("Value of a: %u\n", a);
+    }
     return 0;
 }
