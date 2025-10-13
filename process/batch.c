@@ -1,7 +1,8 @@
+//batch process
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#define NUM_JOBS 5
+#define NUM_JOBS 5 
 void run_job(int job_number) 
 {
     printf("Starting job %d...\n", job_number);

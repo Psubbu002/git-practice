@@ -1,3 +1,4 @@
+//chain of child processes
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -6,7 +7,6 @@ int main()
 {
     char *programs[] = {"/bin/ls", "/bin/date", "/usr/bin/whoami"};
     int n = sizeof(programs) / sizeof(programs[0]);
-
     pid_t pid;
     for (int i = 0; i < n; i++) 
     {

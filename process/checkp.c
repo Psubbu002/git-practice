@@ -43,7 +43,7 @@ int main()
         fclose(stat_file);
         // If tty_nr == 0 means no controlling terminal
         char tty[16] = "?";
-        if (ttynum != 0) 
+        if (tty_nr != 0) 
         {
             snprintf(tty, sizeof(tty), "yes");
         }
