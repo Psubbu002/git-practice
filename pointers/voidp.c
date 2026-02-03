@@ -13,6 +13,7 @@ int main()
    	printf("Float: %f\n", *(float *)arr[1]);	
    	printf("String: %s\n", *(char **)arr[2]);	
    	printf("%d\n",*(char *)ptr);			
-   	printf("%d\n",(char *)ptr);			
+   	printf("%d\n",(char *)ptr);		
+	
    	return 0;
 }
