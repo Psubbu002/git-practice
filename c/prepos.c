@@ -37,15 +37,13 @@ DIFF(diff_fptr,float*,int);
 int main(void)
 {
     printf("%d\n",MAX1); //5
-
     MSG;            //hi
-
     int a=3,b=4;
     printf("product of a and b is %d\n",PROD(a,b)); //product of a and b is 12
 
     int i,j;
     i=B/20;     //A+100/20 =50+100/20=50+5
-    j=500-B;    //500-A+100=500-5+100=450+100
+    j=500-B;    //500-A+100=500-50+100=450+100
     printf("i=%d\t%d\n",i,j);   //i=55  j=550
 
     printf("when you have a chance");

@@ -7,6 +7,6 @@ int main()
 {
     int (*fptr)(int , int );
    	fptr = &add;
-    printf("%d", fptr(10, 5));	//prints the value 5
+    printf("%d", fptr(10, 5));	//prints the value 15
     return 0;
 }

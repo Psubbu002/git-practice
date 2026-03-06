@@ -1,454 +1,269 @@
 #include <stdio.h>
-int main(void)
+#include <stdint.h>
+// Goto example
+void function(void) 
 {
-    printf("hello\n");  //hello
-    goto ab;    //works only within a function
-    return 0;
-}
-void function(void) //function didn't called 
-{
-    ab:
+ab:
     printf("bye\n");
 }
 
-int func(void);
-int main(void)
+int func(void) 
 {
-    int x=10;
-    x=func();
-    printf("%d\n",x);   //0
-    return 0;
-}
-int func(void)
-{
-    printf("function\n");   //function
+    printf("function\n");
+    return 0;  // fixed to compile
 }
 
-void func(int a,int b);
-int main(void)
-{
-    int x;
-    x=func(2,3);
-    return 0;
-}
-void func(int a,int b)
+void func2(int a, int b) 
 {
     int s;
-    s=a+b;
-    return;
+    s = a + b;
 }
 
-int add(int x,y,z)
+int add(int x, int y, int z) 
 {
-    return x+y+z;
-}
-int main(void)
-{
-    int sum;
-    sum=add(1,2,3);
-    return 0;
+    return x + y + z;
 }
 
-int main(void)
+int fun3(int a, int b, int c) 
 {
-    int s;
-    s=fun(2,3); //calling with insufficient 
-    printf("%d\n",s);
-    s=fun(1,2,3);
-    printf("%d\n",s);
-    return 0;
-}
-int fun(int a, int b, int c)    // no function definition before the main
-{
-    return a+b+c;
+    return a + b + c;
 }
 
-int mul(int x, int y);
-int sum(int x, int y);
-int main(void)
+int mul(int x, int y) { return x * y; }
+int sum(int x, int y) { return x + y; }
+
+int fun2(int x, int y) 
 {
-    int m=6,n=3;
-    printf("%d\n",mul(m,n));        //18
-    printf("%d\n",mul(15,4));       //60
-    printf("%d\n",mul(m+n,m-n));    //27
-    printf("%d\n",mul(6,sum(m,n)));     //54
-    return 0;
-}
-int mul(int x, int y)
-{
-    return x*y;
-}
-int sum(int x,int y)
-{
-    return x+y;
+    return x * y;
 }
 
-int fun(int x ,int y);
-int main(void)
+int max(int x, int y) 
 {
-    int p=fun(5,6);
-    printf("%d\n",p);
-    return 0;
-}
-int fun(int x ,int y)
-{
-    int x=2;    //redeclaration
-    return x*y;
+    return x > y ? x : y;
 }
 
-int max(int x,int y)
+int diff(int x, int y) { return x - y; }
+
+int fun4(int x, int y, int z) 
 {
-    return x>y?x:y;
-}
-int main(void)
-{
-    int a=2,b=8,c=3;
-    printf("%d\n",max(a,max(b,c))); //8
-    return 0;
+    return 2 * (x + y + z);
 }
 
-int diff(int x,int y)
-{
-    return x-y;
-}
-int sum(int x,int y)
-{
-    return x+y;
-}
-int main(void)
-{
-    int a=20,b=5,c=2,d=6;
-    printf("%d\n",a+diff(d,c));             //24
-    printf("%d\n",diff(a,sum(diff(b,c),d)));    //11
-    return 0;
-}
+int min(int x, int y) { return x < y ? x : y; }
 
-int fun(int x,int y,int z);
-int main(void)
-{
-    int a=1,b=2,c=3,result;
-    result=fun(a,b,(c=5,c+10));
-    printf("a=%d, b=%d, c=%d\n",a,b,c);
-    printf("result=%d\n",result);
-    return 0;
-}
-int fun(int x,int y,int z)
-{
-    return 2*(x+y+z);
-}
-
-int min(int x,int y);
-int main(void)
-{
-    int a=10,b=5;
-    printf("%d\n",min(a,b));
-    return 0;
-}
-int min(int x,int y)
-{
-    x<y?return x:return y;  //cannot use return in ternary 
-}
-
-void fun(int x,int y);
-int main(void)
-{
-    int x;
-    x=fun(5,6)+100;     //fun is void not return anything
-    printf("%d\n",x);
-    return 0;
-}
-void  fun(int x,int y)
+void fun_void(int x, int y) 
 {
     int z;
-    z=x+y;
+    z = x + y;
 }
 
-int  sqr(int x);
-int cube(int x);
-int fun(int n);
-int main(void)
+int sqr(int x) { return x * x; }
+int cube(int x) { return x * x * x; }
+int fun5(int n) { return n + sqr(n - 2) + cube(n - 1); }
+
+int sum2(int x, int y) 
 {
-    int n=5;
-    printf("%d\n",fun(n));  //78
-    return 0;
-}
-int sqr(int x)
-{
-    return x*x;
-}
-int cube(int x)
-{
-    return x*x*x;
-}
-int fun(int n)
-{
-    return n+sqr(n-2)+cube(n-1);
+    printf("sum=%d\n", x + y);
+    return x + y;
 }
 
-int sum(int x,int y);
-int main(void)
-{
-    (void)sum(1,2); //(void) cast tells the compiler we are intentionally ignoring the return value
-    return 0;
-}
-int sum(int x,int y)
-{
-    printf("sum=%d\n",x+y); //sum=3
-    return x+y;
-}
+int sqr1(int a) { return a * a; }
+int sqr2(double a) { return (int)(a * a); }
+double sqr3(int a) { return a * a; }
+double sqr4(double a) { return a * a; }
 
-int sqr1(int a);
-int sqr2(double a);
-double sqr3(int a);
-double sqr4(double a);
-int main(void)
-{
-    double x=2.5,y;
-    y=sqr1(x);  //// passing double to int function
-    printf("%lf\n",y);      //2*2=4
-    y=sqr2(x);   // passing double to double function, returning int
-    printf("%lf\n",y);  //2.5*2.5=6
-    y=sqr3(x);  // passing double to int function, returning double
-    printf("%lf\n",y);  //2*2=4
-    y=sqr4(x);  // passing double to double function, returning double
-    printf("%lf\n",y);  //2.5*2.5=6.25
-    return 0;
-}
-int sqr1(int a)
-{
-    return a*a;
-}
-int sqr2(double a)
-{
-    return a*a;
-}
-double sqr3(int a)
-{
-    return a*a;
-}
-double sqr4(double a)
-{
-    return a*a;
-}
-
-void fun(void);
-int main(void)
-{
-    int i=5;
-    for(i=i+1;i<8;i++)
-    {
-        fun();
-    }
-    return 0;
-}
-void fun(void)
+void fun6(void) 
 {
     int j;
-    for(j=1;j<3;j++)
-    {
-        printf("%d\t",++j); //2 2
+    for (j = 1; j < 3; j++) {
+        printf("%d\t", ++j);
     }
 }
 
-int main(void)
+int fun7(int a, int b) { return a + b; }
+
+int fun8(int x, int y, int z) { return z; }
+
+void display(int a, int b) { printf("%d  %d\n", a, b); }
+
+int fun9(int a, int b) { a = a - 5; b = b + 5; return (!a + --b); }
+
+void fun10(int a, int b) { a /= 2; b--; printf("%d\n", a + b); }
+
+int global_a = 5;
+void fun11(void) 
 {
-    int fun(int a,int b)
-    {
-        return (a+b);
-    }
-    int c;
-    c=fun(3,5);
-    printf("%d\n",c);
-    return 0;
+    int a = 2;
+    printf("%d\n", a);
 }
 
-int fun(int x,int y,int z);
-int main(void)
+int fun12(int k) 
 {
-    int x;
-    x=fun(2,3,4);
-    printf("%d\n",x);
-    return 0;
-}
-int fun(int x,int y,int z)
-{
-    return x,y,z;
-}
-
-void display(int,int);
-int main(void)
-{
-    int x=15;
-    float y=290.5;
-    display(x,y);
-    return 0;
-}
-void display(int a,int b)
-{
-    printf("%d  %d\n",a,b);     // 15   290
-}
-
-int fun(int a,int b);
-int main(void)
-{
-    int i=2,j=3;
-    printf("%d %d\n",fun(i,j)); //7 6422356
-    return 0;
-}
-int fun(int a,int b)
-{
-    a=a-5;
-    b=b+5;
-    return (!a + --b);
-}
-
-void fun(int a, int b);
-int main(void)
-{
-    int i=5,j=10;
-    fun(i/2,j%3);
-    return 0;
-}
-void fun(int a, int b)
-{
-    a/=2;
-    b--;
-    printf("%d\n",a+b); //1
-}
-
-int a=5;
-void fun(void);
-int main(void)
-{
-    fun();
-    printf("%d\n",a);   // 5
-    return 0;
-}
-void fun(void)
-{
-    int a=2;
-    printf("%d\n",a);   //2
-}
-
-int fun(int k);
-int main(void)
-{
-    int i=0,k=3;
-    i+=fun(k);
-     i+=fun(k);
-      i+=fun(k);
-      printf("%d\n",i); // 11
-      return 0;
-}
-int fun(int k)
-{
-    static int m=2;
-    m=m+k;
+    static int m = 2;
+    m = m + k;
     return m;
 }
 
-void fun(int a , static int b); //not allow static in function parameters.
-int main(void)
-{
-    fun(1,2);
-    fun(3,4);
-    return 0;
-}
-void fun(int a,static int b)
-{
-    a++;
-    b++;
-    printf("%d %d\n",a,b);
-}
+//void fun13(int a , static int b) { a++; b++; printf("%d %d\n",a,b); }
 
-int fun(int n);
-int main(void)
+int fun14(int n) 
 {
-    printf("%d\n",fun(2));  //3
-    printf("%d\n",fun(5));  //18
-    printf("%d\n",fun(2));  //21
-    return 0;
-}
-int fun(int n)
-{
-    static int s=0;
-    int i;
-    for(i=1;i<=n;i++)
-    {
-        s+=i;
-    }
+    static int s = 0;
+    for (int i = 1; i <= n; i++) s += i;
     return s;
 }
 
-int fun(int x,int y);
-int main(void)
-{
-    int a=2,b=5;
-    a=fun(a+b,a-b);
-    printf("%d\n",a);   //10 
-    return 0;
-}
-int fun(int x,int y)
-{
-    return x+y,x-y;
-}
+int fun15(int x, int y) { return x - y; }
 
-int main(void)
-{
-    int i=9;
-    if(i==9)
-    {
-        int i=25;
-    }
-    printf("%d\n",i);   //9
-    return 0;
-}
-
-int f2(int x,int y);
-int main(void)
-{
-    int a,b;
-    printf("enter a and b values\n");
-    scanf("%d %d",&a,&b);
-    printf("%d\n",func(a,b));
-    return 0;
-}
-int func(int a,int b)
-{
+int f1(int x, int y) { return x + y; }
+int f2(int x, int y) { return x - y; }
+int func3(int a, int b) {
     int x;
-    if(a==b)
-    {
-        x=f1(a,b);  //f1 not decfined
-    }
-    else
-    {
-        x=f2(a,b);
-    }
+    if (a == b) x = f1(a, b);
+    else x = f2(a, b);
     return x;
 }
-int f1(int x,int y)
-{
-    return x+y;
-}
-int f2(int x,int y)
-{
-    return x-y;
-}
 
-int fun(void);
-int main(void)
+int fun16(void) 
 {
-    int i;
-    for(i=0;i<=6;i++)
-    {
-        printf("%d ",fun());
-    }
-    return 0;
-}
-int fun(void)
-{
-    static int k=1;
-    k*=2;
+    static int k = 1;
+    k *= 2;
     return k;
 }
 
+int main(void) 
+{
+    int choice;
+    do {
+        printf("\n===== Menu =====\n");
+        printf("1. goto example\n");
+        printf("2. returning nothing\n");
+        printf("3. void func(int,int)\n");
+        printf("4. add() function\n");
+        printf("5. fun3() function\n");
+        printf("6. mul and sum\n");
+        printf("7. fun2() with redeclaration\n");
+        printf("8. max\n");
+        printf("9. diff\n");
+        printf("10. fun4() with comma operator\n");
+        printf("11. min\n");
+        printf("12. fun_void()\n");
+        printf("13. sqr/cube/fun5()\n");
+        printf("14. sum2() with void cast\n");
+        printf("15. sqr1..sqr4\n");
+        printf("16. fun6() nested loop\n");
+        printf("17. fun7()\n");
+        printf("18. fun8() comma operator\n");
+        printf("19. display()\n");
+        printf("20. fun9() complex return\n");
+        printf("21. fun10() division/modulo\n");
+        printf("22. fun11() global/local\n");
+        printf("23. fun12() static variable\n");
+        printf("24. fun14() static sum\n");
+        printf("25. fun15() x-y\n");
+        printf("26. func3() f1/f2\n");
+        printf("27. fun16() static multiply\n");
+        printf("0. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        int x, y, z;
+        double d;
+        switch (choice) {
+            case 1:
+                function();
+                break;
+            case 2:
+                x = func();
+                printf("%d\n", x);
+                break;
+            case 3:
+                func2(2, 3);
+                break;
+            case 4:
+                x = add(1, 2, 3);
+                printf("%d\n", x);
+                break;
+            case 5:
+                x = fun3(1, 2, 3);
+                printf("%d\n", x);
+                break;
+            case 6:
+                printf("%d %d\n", mul(6, 3), sum(6, 3));
+                break;
+            case 7:
+                printf("%d\n", fun2(5, 6));
+                break;
+            case 8:
+                printf("%d\n", max(2, 8));
+                break;
+            case 9:
+                printf("%d\n", diff(10, 4));
+                break;
+            case 10:
+                printf("%d\n", fun4(1, 2, 3));
+                break;
+            case 11:
+                printf("%d\n", min(10, 5));
+                break;
+            case 12:
+                fun_void(2, 3);
+                break;
+            case 13:
+                printf("%d\n", fun5(5));
+                break;
+            case 14:
+                (void)sum2(1, 2);
+                break;
+            case 15:
+                d = sqr1(2);
+                printf("%lf\n", d);
+                break;
+            case 16:
+                fun6();
+                break;
+            case 17:
+                printf("%d\n", fun7(3, 5));
+                break;
+            case 18:
+                printf("%d\n", fun8(2, 3, 4));
+                break;
+            case 19:
+                display(15, 290);
+                break;
+            case 20:
+                printf("%d\n", fun9(2, 3));
+                break;
+            case 21:
+                fun10(5, 10);
+                break;
+            case 22:
+                fun11();
+                printf("%d\n", global_a);
+                break;
+            case 23:
+                printf("%d\n", fun12(3));
+                break;
+            case 24:
+                printf("%d\n", fun14(5));
+                break;
+            case 25:
+                printf("%d\n", fun15(7, 2));
+                break;
+            case 26:
+                printf("%d\n", func3(3, 3));
+                break;
+            case 27:
+                for (int i = 0; i < 6; i++) printf("%d ", fun16());
+                printf("\n");
+                break;
+            case 0:
+                printf("Exiting...\n");
+                break;
+            default:
+                printf("Invalid choice!\n");
+        }
+
+    } while (choice != 0);
+    return 0;
+}

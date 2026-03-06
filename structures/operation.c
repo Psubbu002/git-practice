@@ -1,13 +1,16 @@
 #include <stdio.h>
 #include <math.h>  
-struct Complex {
+struct Complex 
+{
     float real;     //real part
     float imag;     //imaginary part
 };
-void printComplex(const char *label, struct Complex c) {
+void printComplex(const char *label, struct Complex c) 
+{
     printf("%s = %.2f %c %.2fi\n", label, c.real, (c.imag >= 0) ? '+' : '-', fabs(c.imag));
 }
-int main() {
+int main() 
+{
     struct Complex c1, c2, sum, diff, prod;
     printf("Enter first complex number (real imag): ");
     scanf("%f %f", &c1.real, &c1.imag);

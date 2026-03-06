@@ -5,7 +5,7 @@ int main()
     printf("Enter the number of lines:");
     scanf("%d",&n);
 
-    printf("accending order patterns:\n");
+    printf("\t\taccending order patterns:\t\t\n");
     printf("Start pattern:\n");
     for(int i=1;i<=n;i++)
     {
@@ -94,7 +94,7 @@ int main()
         printf("\n");
     }
     
-    printf("descending pattern:\n");
+    printf("\t\tdescending pattern:\t\t\n");
     printf("reverse patterns1:\n");
     for(int a=1;a<=n;a++)
     {
@@ -200,7 +200,6 @@ int main()
         printf("\n");
     }
 
-    printf("\n");
     printf("pyramid 2:\n");
     for(int k=1;k<=n;k++)
     {
@@ -215,7 +214,6 @@ int main()
         printf("\n");
     }
 
-    printf("\n");
     printf("pyramid 3:\n");
     for(int a=1;a<=n;a++)
     {
@@ -230,7 +228,6 @@ int main()
         printf("\n");
     }
 
-    printf("\n");
     printf("pyramid 4:\n");
     for(int c=1;c<=n;c++)
     {
@@ -245,7 +242,6 @@ int main()
         printf("\n");
     }
 
-    printf("\n");
     printf("pyramid 4:\n");
     int g;
     for(int e=1;e<=n;e++)
@@ -267,7 +263,6 @@ int main()
         printf("\n");
     }
 
-    printf("\n");
     printf("pyramid 5:\n");
     int h;
     for(int o=1;o<=n;o++)
@@ -309,26 +304,24 @@ int main()
         printf("\n");
     }
 
-    int p;
+    int p1;
     for(int i=1;i<=n;i++)
     {
         for(int j=1;j<=n-i;j++)
         {
             printf(" ");
         }
-        p=i;
+        p1=i;
         for(int j=1;j<=i;j++)
         {
-            printf("%d ",p++);
+            printf("%d ",p1++);
         }
-        p=p-2;
+        p1=p1-2;
         for(int j=1;j<i-1;j++);
         {
-            printf("%d ",p--);
+            printf("%d ",p1--);
         }
         printf("\n");
     }
-   
-
     return 0;
 }

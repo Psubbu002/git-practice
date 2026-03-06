@@ -3,15 +3,14 @@
 typedef struct 
 {
     int *array;       
-    int top;          
-    int capacity;     
+    int top,capacity;     
 } Stack;
 Stack *createStack(int initialCapacity) 
 {
-    Stack *stack = (Stack *)malloc(sizeof(Stack));
+    Stack *stack = malloc(sizeof(Stack));
     stack->capacity = initialCapacity;
     stack->top = -1;
-    stack->array = (int *)malloc(stack->capacity * sizeof(int));
+    stack->array =  malloc(stack->capacity * sizeof(int));
     return stack;
 }
 int isEmpty(Stack *stack) 
@@ -21,7 +20,7 @@ int isEmpty(Stack *stack)
 void resizeStack(Stack *stack) 
 {
     stack->capacity *= 2;
-    stack->array = (int *)realloc(stack->array, stack->capacity * sizeof(int));
+    stack->array =  realloc(stack->array, stack->capacity * sizeof(int));
 }
 void push(Stack *stack, int value) 
 {

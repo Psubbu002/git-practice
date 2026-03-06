@@ -1,14 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-struct Node {
+struct Node 
+{
     int data;
     struct Node* next;  
 };
 int main() 
 {
-    struct Node* head = (struct Node*)malloc(sizeof(struct Node));
-    struct Node* second = (struct Node*)malloc(sizeof(struct Node));
-    struct Node* third = (struct Node*)malloc(sizeof(struct Node));
+    struct Node* head = malloc(sizeof(struct Node));
+    struct Node* second = malloc(sizeof(struct Node));
+    struct Node* third = malloc(sizeof(struct Node));
     head->data = 1;
     head->next = second;
     second->data = 2;

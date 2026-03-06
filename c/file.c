@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-struct student{
+struct student {
     char name[20];
     int roll;
     int marks;
@@ -122,7 +121,7 @@ int main(void)
          printf("%19s\t%d\t%d\n",std.name,std.roll,std.marks);
     }
 
-    printf("%d\n",ftell(fp)); */
+    printf("%d\n",ftell(fp)); 
     fread(&std,sizeof(std),1,fp); 
     while(!feof(fp))
     {

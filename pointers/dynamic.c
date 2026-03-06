@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-struct person {
+struct person{
    	int age;
    	float weight;
    	char name[30];
@@ -11,7 +11,7 @@ int main()
     int i, n;
 	printf("Enter the number of persons: ");
    	scanf("%d", &n);
-   	ptr = (struct person*) malloc(n * sizeof(struct person));
+   	ptr = malloc(n * sizeof(struct person));
    	for(i = 0; i < n; ++i)
    	{
        	printf("Enter first name and age respectively: ");

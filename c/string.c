@@ -23,7 +23,7 @@ int main(void)
     strcat(str,'?');    //error "strcat(str,"?");"
     printf("%s\n",str); 
 
- char str1[]="deep";
+   char str1[]="deep";
    char str2[]={'d','e','e','p'};
    if(strcmp(str1,str2)==0)
    {

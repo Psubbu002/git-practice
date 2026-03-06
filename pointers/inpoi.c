@@ -3,7 +3,7 @@ int main()
 {
     int a;
     printf("Enter the element:");
-    scanf("%d",&a);
+    scanf("%d",&a);//10
     int *ptr=&a;
     printf("%d\n",*ptr);	//print the value 10
     printf("%d\n",ptr);	//print the address -251188156

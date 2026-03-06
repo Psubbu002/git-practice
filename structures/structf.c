@@ -4,7 +4,6 @@ struct rectangle
    float len, brd;
    double area;
 };
-struct rectangle area(float x, float y);
 struct rectangle area(float x, float y)
 {
    double area = (double)(x*y);

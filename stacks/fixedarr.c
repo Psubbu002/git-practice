@@ -7,12 +7,12 @@ struct Stack
 };
 struct Stack* createStack(int cap) 
 {
-    struct Stack* stack = (struct Stack*)malloc(sizeof(struct Stack));
+    struct Stack* stack =  malloc(sizeof(struct Stack));
     stack->cap = cap;
     stack->top = -1;
-    stack->a = (int*)malloc(cap * sizeof(int));
+    stack->a =  malloc(cap * sizeof(int));
     return stack;
-}
+} 
 void deleteStack(struct Stack* stack) 
 {
     free(stack->a);

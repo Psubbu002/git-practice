@@ -14,9 +14,9 @@ struct Node
 };
 int main() 
 {
-    struct Node* head = (struct Node*)malloc(sizeof(struct Node));
-    struct Node* second = (struct Node*)malloc(sizeof(struct Node));
-    struct Node* third = (struct Node*)malloc(sizeof(struct Node));
+    struct Node* head = malloc(sizeof(struct Node));
+    struct Node* second = malloc(sizeof(struct Node));
+    struct Node* third = malloc(sizeof(struct Node));
     head->type = 1; 
     head->data.i = 42;
     head->next = second;
@@ -24,7 +24,9 @@ int main()
     second->data.f = 3.14;
     second->next = third;
     third->type = 3;  
-    snprintf(third->data.str, sizeof(third->data.str), "Hello");
+    snprintf(third->data.str, sizeof(third->data.str), "Hello");    //printf() → prints to screen
+                                                                    //sprintf() → prints to string (unsafe)
+                                                                    //snprintf() → safe version of sprintf()
     third->next = NULL;
     struct Node* current = head;
     while (current != NULL) 

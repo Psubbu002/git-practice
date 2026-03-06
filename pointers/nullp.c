@@ -3,7 +3,7 @@
 int main()
 {
     //int *ptr=NULL; 	//Prints memory allocation failed
-   	int* ptr = (int*)malloc(sizeof(int));	//prints memory allocated successfully
+   	int* ptr =malloc(sizeof(int));	//prints memory allocated successfully
    	if (ptr == NULL)
     {
       	printf("Memory Allocation Failed");

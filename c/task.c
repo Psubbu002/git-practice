@@ -14,5 +14,11 @@ int main(void)
         printf("%c", s[i]);
     }
     printf("\n");
+    int a=5;
+   int *ptr=&a;
+    printf("%d\n",*ptr); // 5
+    printf("%d\n",ptr); //address
+    printf("%d\n",a);//5
     return 0; 
 }
+
