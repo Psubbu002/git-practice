@@ -15,6 +15,7 @@ int main()
             scanf("%d",&arr[i][j]);
         }
     }
+    
     printf("Enter searching element:");
     scanf("%d",&key);
     for (int i = 0; i < m; i++)

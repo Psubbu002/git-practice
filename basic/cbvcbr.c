@@ -1,17 +1,20 @@
 #include <stdio.h>
-void changeValue(int x) {
+void changeValue(int x) 
+{
     x = 10;
 }
-void change(int *x){
+void change(int *x)
+{
     *x=*x+10;
 }
-int main( ) {
+int main( ) 
+{
     int a=8;
     //printf("enter a number:");
     //scanf("%d",&a);
     changeValue(a);
-    printf("using call by value a = %d\n", a);  
+    printf("using call by value a = %d\n", a);  //8
     change(&a);
-    printf("using call by reference a = %d\n", a);  
+    printf("using call by reference a = %d\n", a);  //18
     return 0;
 }

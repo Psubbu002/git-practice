@@ -15,7 +15,7 @@ int main(void)
     }
     printf("\n");
     int a=5;
-   int *ptr=&a;
+    int *ptr=&a;
     printf("%d\n",*ptr); // 5
     printf("%d\n",ptr); //address
     printf("%d\n",a);//5

@@ -27,7 +27,7 @@ void convert(int num, int base)
         printf("%c", rem - 10 + 'A');
 }
 
-// ---------------- Recursion: Star Patterns ----------------
+// ---------------- Recursion:Star Patterns ----------------
 void fun1(int n) 
 {  // decreasing stars
     if (n == 0) return;

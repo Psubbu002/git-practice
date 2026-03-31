@@ -1,5 +1,5 @@
 #include <stdio.h>
-int main()
+int main(void)
 {
     int n;
     printf("Enter the size:");
@@ -10,6 +10,7 @@ int main()
     {
         scanf("%d",&arr[i]);
     }
+
     for (int i=0; i<n-1; i++) 
     {
         for (int j=i+1; j<n; j++) 
@@ -22,10 +23,12 @@ int main()
             }
         }
     }
+
     printf("Sorted array:\n");
     for(int i=0;i<n;i++)
     {
         printf("%d\t",arr[i]);
-    }        
+    } 
+           
     return 0;
 }

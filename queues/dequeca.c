@@ -8,10 +8,12 @@ int isFull()
 {
     return ((front == 0 && rear == MAX - 1) || (front == rear + 1));
 }
+
 int isEmpty() 
 {
     return (front == -1);
 }
+
 void insertFront(int key) 
 {
     if (isFull()) 
@@ -78,6 +80,7 @@ void deleteFront()
     }
     printf("Deleted %d from the front.\n", removed);
 }
+
 void deleteRear() 
 {
     if (isEmpty()) 

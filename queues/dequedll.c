@@ -5,29 +5,34 @@ struct Node
     int data;
     struct Node *prev, *next;
 };
+
 struct Deque 
 {
     struct Node *front, *rear;
     int size;
 };
+
 struct Deque* createDeque() 
 {
-    struct Deque* dq = (struct Deque*)malloc(sizeof(struct Deque));
+    struct Deque* dq = malloc(sizeof(struct Deque));
     dq->front = dq->rear = NULL;
     dq->size = 0;
     return dq;
 }
+
 int isEmpty(struct Deque* dq) 
 { 
     return dq->front == NULL; 
 }
+
 int getSize(struct Deque* dq) 
 { 
     return dq->size; 
 }
+
 void insertFront(struct Deque* dq, int data) 
 {
-    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    struct Node* newNode = malloc(sizeof(struct Node));
     newNode->data = data;
     newNode->prev = NULL;
     newNode->next = dq->front;
@@ -43,6 +48,7 @@ void insertFront(struct Deque* dq, int data)
     dq->size++;
     printf("%d inserted at front.\n", data);
 }
+
 void insertRear(struct Deque* dq, int data) 
 {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
@@ -61,6 +67,7 @@ void insertRear(struct Deque* dq, int data)
     dq->size++;
     printf("%d inserted at rear.\n", data);
 }
+
 void deleteFront(struct Deque* dq) 
 {
     if (isEmpty(dq)) 
@@ -83,6 +90,7 @@ void deleteFront(struct Deque* dq)
     dq->size--;
     printf("%d deleted from front.\n", removed);
 }
+
 void deleteRear(struct Deque* dq) 
 {
     if (isEmpty(dq)) 
@@ -105,14 +113,17 @@ void deleteRear(struct Deque* dq)
     dq->size--;
     printf("%d deleted from rear.\n", removed);
 }
+
 int getFront(struct Deque* dq) 
 {
     return isEmpty(dq) ? -1 : dq->front->data;
 }
+
 int getRear(struct Deque* dq) 
 {
     return isEmpty(dq) ? -1 : dq->rear->data;
 }
+
 void clear(struct Deque* dq) 
 {
     while (!isEmpty(dq)) 
@@ -121,6 +132,7 @@ void clear(struct Deque* dq)
     }
     printf("Deque cleared.\n");
 }
+
 void display(struct Deque* dq) 
 {
     if (isEmpty(dq)) 
@@ -137,6 +149,7 @@ void display(struct Deque* dq)
     }
     printf("\n");
 }
+
 int main() 
 {
     struct Deque* dq = createDeque();

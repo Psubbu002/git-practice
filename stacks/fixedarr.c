@@ -5,6 +5,7 @@ struct Stack
     int top, cap;
     int *a;
 };
+
 struct Stack* createStack(int cap) 
 {
     struct Stack* stack =  malloc(sizeof(struct Stack));
@@ -58,7 +59,7 @@ int peek(struct Stack* stack)
     }
     return stack->a[stack->top];
 }
-int main()
+int main(void)
 {
     struct Stack* s = createStack(5);
     int n;

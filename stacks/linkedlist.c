@@ -6,10 +6,12 @@ struct Node
     int data;
     struct Node* next;
 };
+
 int isEmpty(struct Node* head) 
 {
     return head == NULL;
 }
+
 void push(struct Node** head, int new_data) 
 {
     struct Node* new_node =  malloc(sizeof(struct Node));

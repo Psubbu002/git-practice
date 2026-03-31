@@ -1,8 +1,13 @@
 #include <stdio.h>
 int main() 
 {
-    unsigned int num = 0x12345678;  
-    unsigned char *ptr = (unsigned char*)&num;
+    int num = 12;
+    char *ptr = (char*)&num;
+    if (*ptr == 12)
+        printf("Little Endian\n");
+    else
+        printf("Big Endian\n");
+
     printf("Original number: 0x%x\n", num);
     //to check the little endian
     printf("Bytes in memory:\n");

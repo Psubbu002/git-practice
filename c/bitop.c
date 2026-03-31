@@ -4,9 +4,7 @@ void displayBits(unsigned int  x)
 {
     int bits = sizeof(x) * 8;
     for (int i = bits - 1; i >= 0; i--)
-    {
         printf("%d", (x >> i) & 1);
-    }
     printf("\n");
 }
 

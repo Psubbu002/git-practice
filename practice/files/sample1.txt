@@ -1,0 +1,506 @@
+Router 
+A networking device that connects multiple networks and forwards data packets between them based on IP addresses 
+Key characteristics 
+* Operates at Layer 3 (Network Layer) of the OSI model
+* Uses routing tables to determine packet forwarding
+* Connects different networks or subnets
+Example flow
+		Computer → Router → ISP → Internet → Server
+Routers used in enterprise networks are produced by companies like 
+* Cisco Systems 
+* Juniper Networks 
+* Arista Networks
+* Multicom
+* Nortel
+* 3com
+* Dlink
+3-level hierarchy cisco router
+          * Access Router  
+Connects end-user networks 
+Desktop routers or company layer router
+Router series : 800,1000,1600,1700,2500
+  *  Distribution Router
+Aggregates traffic from access networks 
+ ISP layer router
+Costly than Access layer router
+Router series : 2600,3200,3600,3700
+           * Core Router
+Backbone router handling large traffic 
+used by the global ISPs
+Router series : 6400,7200,7300,7400,7500,7600,10000,12000
+            * Edge Router: Connects internal network to internet , uses Integrated Service Router [ISR] , BGP
+ 		* ISR: 
+they just do not routing , it supports voice and security implementation
+Series : 800,1800,2800,3800
+
+Classification of routers:
+	A) Fixed router
+Non upgradable , can not add or remove the Ethernet or serial ports
+Does not have any slot
+ports are integrated to motherboard
+Access routers are fixed routers
+ 	B) Modular router
+Upgradable , add or remove as per our requirement
+Number of slots available depends on the series of the router
+Series>2600=Modular routers
+Ports on Router 
+	A) LAN ports
+Ethernet 10Mbps
+Fast Ethernet  100Mbps
+Gig Ethernet 1000Mbps
+All ports are of RJ45 connectors
+	B) WAN ports
+ports used for router to router connection
+serial interfaces [ S0,S1,S0/0,S0/1,S0/0/0 ectc]
+serial ports are of 2 category :  26 pins and 60 pins
+	C) Administrative ports
+		* Console 
+Local administrative, initial config, password recovery
+one side RJ45 and other is 9pin com port , and not carry any traffic
+		* Auxiliary
+Remote administrative
+RJ45 to DB-25
+console or rollover cable is to be used
+Internal components of Router
+ROM
+POST [ Power On Self Test ]
+RAM
+NVRAM [ Non -Volatile RAM ]
+Flash Memory
+Mini-IOS
+Modes of Router
+Setup Mode
+User Mode
+Privileged Mode
+Global Configuration Mode
+Interface Mode
+Router Architecture
+
+
+
+
+
+
+Routing
+process of selecting the best path for data packets to travel from source to destination across networks
+Routing involves:
+Discovering network paths
+Maintaining routing information
+Forwarding packets to the correct next hop
+Routing is essential for communication across the internet.
+ Routing Table
+A routing table contains:
+Destination
+Next Hop
+Interface
+Metric
+Example entry:
+	Destination: 192.168.1.0/24
+	Next hop: 10.0.0.1
+	   Interface: GigabitEthernet0/1
+Classification of Routing Types:
+	1) Routing Type:
+Static
+Dynamic
+Default
+	2) OSI Layer
+Data Link Layer : Routing based on MAC . Example :- Bridge-based routing
+Network Layer : Routers, IP
+Application Layer : Application-aware routing,Overlay routing in distributed systems. 
+ 		3) Based on addressing
+ Classful routing protocol 
+ 		* RIPv1
+   		* IGRP [ Cisco proprietary (obsolete)]
+Classless routing protocol
+Protocol
+Type
+RIPv2
+Distance Vector
+EIGRP
+Advanced Distance Vector
+OSPF
+Link State
+IS-IS
+Link State
+BGP
+Path Vector
+Why Dynamic Routing is Needed?
+Static routing limitations
+Not scalable for large networks
+Requires manual updates
+Dynamic routing automatically adapts to changes
+Routing Protocols 
+Routing protocols allow routers to exchange network information automatically
+Important protocols
+Protocol
+Type
+Algorithm
+Metric
+Usage
+RIP
+IGP
+Distance Vector
+Hop Count
+Small networks
+OSPF
+IGP
+Link-State
+Cost
+Enterprise networks
+EIGRP
+IGP
+Hybrid
+Multiple metrics(Bandwidth+delay)
+Cisco networks
+IS-IS
+IGP
+Link-State
+Cost
+ISP networks
+BGP
+EGP
+Path Vector
+Path attributes
+Internet routing
+
+Protocol Type
+Think of It As
+Distance Vector
+Ask neighbors for directions
+Link-State
+Have a full map of the city
+Path Vector
+Know the entire highway route between countries
+Major Protocols of Unicast Routing
+Distance Vector Routing: Distance-Vector routers use a distributed algorithm to compute their routing tables.
+Link-State Routing: Link-State routing uses link-state routers to exchange messages that allow each router to learn the entire network topology
+Path-Vector Routing: It is a routing protocol that maintains the path that is updated dynamically.
+How Routers Decide the Best Path
+Routers determine the best route using metrics
+A metric is a value used to evaluate route quality
+Common metrics include:
+	* Hop count
+	* Bandwidth
+	* Delay
+	* Reliability
+	* MTU
+	* Cost
+Example:
+Route A → 3 hops
+Route B → 5 hops
+	* If using hop-count metric, router selects Route A
+	* Routers stire the chose routes in a routing table
+When are routing metrics compared? 
+“When the routes have the same Administrative Distance[AD] , is a measure of trust worthiness of the routing information received.”
+AD decides the protocol,Metric decides the path
+The default AD of common routing protocols are listed below: 
+Feature
+Administrative Distance
+Metric
+Purpose
+Select routing protocol
+Select best path within protocol
+Compared Between
+Different protocols
+Same protocol
+Example
+OSPF vs EIGRP
+OSPF path cost
+110<120 = best 
+Protocol
+AD
+Metric
+OSPF
+110
+20
+RIP
+120
+2
+
+Route Source
+Default Distance Value
+Connected Interface
+0
+Static Route
+1
+EIGRP Summary Route
+5
+BGP
+20
+Internal EIGRP
+90
+IGRP
+100
+OSPF
+110
+IS_IS
+115
+RIP
+120
+EGP
+140
+On Demand Routing ( ODR )
+160
+External EIGRP
+170
+Internal BGP
+200
+Unknown *
+255
+OSPF:
+Designed for medium to large enterprise networks
+Uses Dijkstra Shortest Path First Algorithm , Dynamic routing and use Link state , IGP
+Open Standard (RFC 2328)
+Metric: Cost (based on bandwidth)
+Fast convergence
+Supports authentication
+Protocol Type: Interior Gateway Protocol (IGP).
+Protocol Number: 89.
+Administrative Distance (AD): 110.
+Classless Protocol: Supports VLSM and CIDR.
+OSPF Multicast Addresses:
+224.0.0.5: All OSPF routers.
+224.0.0.6: Designated Router (DR) and Backup Designated Router (BDR).
+Uses Link State Advertisment [ LSA] - message that describes network topology information and is stored in the Link-State Database (LSDB). 
+OSPF Terminologies
+1. Link-State Advertisements (LSAs): Carry network topology information.
+2. Link-State Database (LSDB): Collection of all LSAs in the area.
+3. Areas
+Backbone Area (Area 0): Core of the OSPF domain; all other areas must connect here.
+Normal Areas: Standard areas that connect to Area 0.
+Stub Areas: Reduce routing table size by limiting external route information.
+4. Router Types
+Internal Router:Operates inside a single area.
+Area Border Router (ABR):Connects multiple areas to Area 0.
+Autonomous System Boundary Router (ASBR):Connects OSPF to other routing protocols.
+Designated Router (DR):Elected on broadcast/multi-access networks to reduce adjacencies.
+Backup Designated Router (BDR):Backup for DR to ensure redundancy.
+5. Neighbor Adjacency Requirements
+Same Area ID.
+Unique Router ID.
+Matching Subnet, Hello/Dead timers and Authentication.  	
+TYPES of LSA:
+LSA Type
+Name
+Generated By
+Purpose
+Type 1
+Router LSA
+Every Router
+Router links
+Type 2
+Network LSA
+DR
+Multi-access networks
+Type 3
+Summary LSA
+ABR[ Area Border Router ]
+Inter-area routes
+Type 4
+ASBR[Autonomous System Boundary Router] Summary
+ABR
+Location of ASBR
+Type 5
+External LSA
+ASBR
+External routes
+Type 6
+Group Membership
+MOSPF [ Multicast OSPF ]
+Multicast
+Type 7
+NSSA  [ Non- So- Stuby-Area]External
+ASBR inside NSSA
+External routes in NSSA
+    A) OSPF Router ID
+32-bit unique identifier
+Can be manually configured
+If not configured:
+			* Highest Loopback IP
+			* Highest active interface IP
+Router ID selection order:
+			* Manually configured Router ID
+			* Highest Loopback IP
+			* Highest active interface IP
+ 	B) OSPF Areas = Logical grouping of routers 
+OSPF uses hierarchical design
+Divided into Areas
+Area 0 = Backbone Area
+	            * Types:
+Backbone Area – Central area of OSPF 
+Normal → Everything allowed
+Stub → No external routes
+Totally Stubby → Only default route
+NSSA → Stub + external redistribution
+Area Type
+LSAs Allowed
+External Routes
+Default Route
+Purpose / Use Case
+Backbone (Area 0)
+Type 1, 2, 3, 4, 5
+Yes
+Not required
+Core of OSPF
+Normal Area
+Type 1, 2, 3, 4, 5
+Yes
+Optional
+Full routing information
+Stub Area
+Type 1, 2, 3
+❌ No (blocks Type 5)
+✅ Yes (injected by ABR)
+Reduces routing table size
+Totally Stubby Area (Cisco)
+Type 1, 2
+❌ No
+✅ Yes (only default route)
+Minimizes routing table
+NSSA (Not-So-Stubby Area)
+Type 1, 2, 3, 7
+✅ Yes (via Type 7)
+Optional
+Allows redistribution inside a stub-like area
+	C) OSPF Router Types
+Internal Router
+Backbone Router 
+Area Border Router (ABR) - Routers connecting different areas are called Area Border Routers (ABR). 
+Autonomous System Boundary Router (ASBR)
+             * Example:
+ABR connects multiple areas
+ASBR connects to external networks  	  
+ 	D) OSPF Packet Types
+Packet Type
+Purpose
+Hello
+Discover and maintain neighbors
+DBD
+Exchange database summaries
+LSR
+Request missing LSAs
+LSU
+Send LSAs
+LSAck
+Acknowledge LSAs
+         E) OSPF Hello Packet
+ 	               * Used for:
+Discovering neighbors
+Maintaining neighbor relationships
+Elect DR and BDR
+Checking link health
+                      * Default Hello Timers:
+Broadcast network: 10 seconds
+Dead timer: 40 seconds
+                    * Information Inside Hello Packet
+Router ID
+Hello interval
+Dead interval
+Area ID
+Authentication
+Neighbor list
+	   F) OSPF Neighbor Relationship 
+State
+Meaning
+Down
+No hello packets
+Init
+Hello received
+2-Way
+Bidirectional communication
+ExStart
+Master/slave negotiation, highest router ID=Master
+Exchange
+Database exchange
+Loading
+LSA requests
+Full
+Adjacency complete
+	   G) OSPF Metric (Cost)
+OSPF uses Cost as metric
+Formula:
+		Cost = Reference Bandwidth / Interface Bandwidth
+Example:
+		Fast Ethernet → Cost 1
+		Slower links → Higher cost
+	    H) Designated Router (DR) and Backup DR
+Used in broadcast networks to reduce traffic
+Roles:
+Designated Router (DR)
+Backup Designated Router (BDR)
+DROthers
+	  I) Troubleshooting OSPF
+show ip ospf neighbor
+show ip ospf database
+show ip route ospf
+show ip ospf interface
+BGP 
+used to announce which networks control which IP addresses, and which networks connect to each other. 
+The large networks that make these BGP announcements are called autonomous systems.
+Much like the post office processing mail, BGP picks the most efficient routes for delivering Internet traffic. 
+makes the Internet work by enabling data routing.
+The Internet is a network of networks. It is broken up into hundreds of thousands of smaller networks known asautonomous systems (ASes) 
+If we continue to think of BGP as the Postal Service of the Internet, ASes are like individual post office branches. A town may have hundreds of mailboxes, but the mail in those boxes must go through the local postal branch before being routed to another destination. The internal routers within an AS are like mailboxes. They forward their outbound transmissions to the AS, which then uses BGP routing to get these transmissions to their destinations. 
+
+Real-World Visualization of Routing
+	Linux Routing Table
+Command:
+			ip route
+Example output
+			default via 192.168.1.1 dev eth0
+			192.168.1.0/24 dev eth0 proto kernel
+Explanation
+			* `default` → default route
+			* `via` → next hop
+			* `dev` → network interface
+	Windows Routing Table
+Command
+			route print
+Example output
+Network Destination    Netmask       	 Gateway
+				0.0.0.0               0.0.0.0          192.168.1.1
+		    		192.168.1.0         255.255.255.0   	On-link
+This table shows
+			* Destination network
+			* Gateway
+			* Interface
+			* Metric
+Real-World Use Cases
+Routers are essential in modern networking
+      A) Home Networks
+Home routers connect devices to the internet
+Example manufacturers:
+		* TP-Link
+		* Netgear
+   B) Enterprise Networks	
+Companies use routers to connect
+		* Branch offices
+		* Data centers
+		* Cloud networks
+        C) Internet Backbone
+Large ISPs use routers to move global internet traffic using BGP.
+Major providers include:
+		* AT&T
+		* Verizon Communications
+Simple Real-World Analogy :
+	Think of routers like Google Maps for data.
+Data packet = car
+Network = roads
+Router = navigation system
+Routing table = map database
+	Router decides: "Which road should this packet take to reach the destination fastest?"
+Simple Packet Flow Visualization
+	Laptop
+   	 │
+   	 │ Packet
+   	 ▼
+     Home Router
+   	 │
+   	 ▼
+       ISP Router
+  	 │
+   	 ▼
+      Internet Backbone Router
+   	 │
+   	 ▼
+     Destination Server

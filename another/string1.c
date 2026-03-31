@@ -1,15 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-int countWords(char *);
-int countVowels(char *);
-int isPalindrome(char *);
-void deleteChar(char *, char);
-void removeExtraSpaces(char *);
-void deleteDuplicates(char *);
-void sortString(char *);
-void reverseWords(char *);
-void mergeStrings(char *, char *, char *);
 int countWords(char *str) 
 {
     int count = 0, inWord = 0;
@@ -54,16 +45,22 @@ int isPalindrome(char *str)
     }
     return 1;
 }
-void deleteChar(char *str, char ch) 
+int deleteChar(char *str, char ch) 
 {
 
     int i, j = 0;
+    int deleted=0;
     for (i = 0; str[i]; i++) 
     {
         if (str[i] != ch)
             str[j++] = str[i];
+        else
+        {
+            deleted=1;
+        }
     }
     str[j] = '\0';
+    return deleted;
 }
 void removeExtraSpaces(char *str) 
 {
@@ -234,8 +231,14 @@ int main()
             case 4:
                 printf("Enter character to delete: ");
                 scanf("%c", &ch);
-                deleteChar(str1, ch);
-                printf("Updated string: %s\n", str1);
+                if(deleteChar(str1, ch))
+                {
+                    printf("Updated string: %s\n", str1);
+                }
+                else
+                {
+                    printf("character not found : %s\n",str1);
+                }
                 break;
             case 5:
                 removeExtraSpaces(str1);

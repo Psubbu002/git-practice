@@ -34,23 +34,23 @@ int main(void)
        printf("nt");
    }
       
-       char *str[10];
-  int i;
-  for(i=0;i<10;i++)
-  {
-      scanf("%s",str[i]);
-  }
-  for(i=0;i<10;i++)
-  {
-      printf("%s\n",str[i]);
-  }
+    char *str[10];
+    int i;
+    for(i=0;i<10;i++)
+    {
+        scanf("%s",str[i]);
+    }
+    for(i=0;i<10;i++)
+    {
+        printf("%s\n",str[i]);
+    }
     
     int marks;
- char name[50];
- printf("enter marks");
- scanf("%d",&marks);
- printf("enter name:");
- gets(name);
- puts(name);
+    char name[50];
+    printf("enter marks");
+    scanf("%d",&marks);
+    printf("enter name:");
+    gets(name);
+    puts(name);
     return 0;
 }

@@ -7,7 +7,8 @@ int StringLength(char *str)
     }
     return 1 + StringLength(str + 1);
 }
-int main() 
+
+int main(void) 
 {
     char str[100];
     printf("Enter a string: ");    

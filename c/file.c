@@ -50,14 +50,13 @@ int main(void)
         printf("error");
     }
     
-    
     ch=fgetc(fp);
     while(ch!=EOF)
     {
         printf("%c",ch);
         ch=fgetc(fp);   
     }
-   
+    
     printf("To stop entering ,press ctrl+d/ctrl+z\n");
     printf("Enter text:\n");
     while(gets(str)!=NULL)     
@@ -73,7 +72,7 @@ int main(void)
   
     printf("Enter number of records:\n");
     scanf("%d",&n);
-    for(i=0;i<n;i++)
+    for(int i=0;i<n;i++)
     {
         printf("Enter the name:");
         scanf("%19s",std.name);
@@ -129,9 +128,6 @@ int main(void)
         printf("%19s\t%d\t%d\n",std.name,std.roll,std.marks);
         fread(&std,sizeof(std),1,fp); 
     }
-
-
     fclose(fp);
-   
     return 0;
 }

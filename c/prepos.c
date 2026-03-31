@@ -1,8 +1,8 @@
 #include <stdio.h>
-#define MAX(FNAME,DTYPE)        \
-            DTYPE FNAME(DTYPE X,DTYPE Y)    \
-            {                               \
-                return X>Y ? X:Y;           \
+#define MAX(FNAME,DTYPE)                    \
+            DTYPE FNAME(DTYPE X,DTYPE Y)     \
+            {                                 \
+                return X>Y ? X:Y;              \
             }                               
 MAX(max_int,int)
 MAX(max_float,float)
@@ -11,8 +11,8 @@ MAX(max_double,double)
 RTYPE FNAME(DTYPE X, DTYPE Y) { return X-Y;}
 DIFF(diff_int,int,int)
 DIFF(diff_iptr,int*,int)
-DIFF(diff_float,float,float);
-DIFF(diff_fptr,float*,int);
+DIFF(diff_float,float,float)
+DIFF(diff_fptr,float*,int)
 #define MAX1 5
 #define MSG printf("hi\n");
 #define PROD(x,y) ((x)*(y))
@@ -86,12 +86,13 @@ int main(void)
     printf("c=%d\td=%d\tx=%d\ty=%d\ts=%d\tt=%d\n",c,d,x,y,s,t); //c=2 d=1 x=4 y=3 s=garbage value t=26
 
     int arr1[5]={20,34,56,12,96},*ptr=arr1;
-    INC(int,arr[2],3);
+    INC(int,arr1[2],3);
+    printf("arr[2]=%d\n",arr1[2]); //arr[2]=59
     INC(int*,ptr,2);
     printf("*ptr=%d\n",*ptr);   //*ptr=56
 
     INT e=2,*p1=&e;
-    printf("e=%d\t*p=%d\n",e,*p1);  //e=2 *p=2
+    printf("e=%d\t*p=%d\tp=%d\n",e,*p1,p1);  //e=2  *p=2 p=&e
 
     #if X||Y&&Z
         printf("sea is depth\n");
@@ -154,7 +155,7 @@ int main(void)
     while(*p3!='\0')
     {
         char ch=*p3++;
-        printf("%c",ch);    //DEVANSHI
+        printf("%c",ch);    //Devanshi
     }
     return 0;
 }

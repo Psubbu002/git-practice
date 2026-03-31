@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdint.h>
-// Goto example
+//Goto example
 void function(void) 
 {
 ab:
@@ -19,35 +19,21 @@ void func2(int a, int b)
     s = a + b;
 }
 
-int add(int x, int y, int z) 
-{
-    return x + y + z;
-}
+int add(int x, int y, int z) { return x + y + z; }
 
-int fun3(int a, int b, int c) 
-{
-    return a + b + c;
-}
+int fun3(int a, int b, int c) { return a + b + c; }
 
 int mul(int x, int y) { return x * y; }
+
 int sum(int x, int y) { return x + y; }
 
-int fun2(int x, int y) 
-{
-    return x * y;
-}
+int fun2(int x, int y) { return x * y; }
 
-int max(int x, int y) 
-{
-    return x > y ? x : y;
-}
+int max(int x , int y) { return x > y ? x : y; }
 
 int diff(int x, int y) { return x - y; }
 
-int fun4(int x, int y, int z) 
-{
-    return 2 * (x + y + z);
-}
+int fun4(int x, int y, int z) { return 2 * (x + y + z); }
 
 int min(int x, int y) { return x < y ? x : y; }
 
@@ -58,7 +44,9 @@ void fun_void(int x, int y)
 }
 
 int sqr(int x) { return x * x; }
+
 int cube(int x) { return x * x * x; }
+
 int fun5(int n) { return n + sqr(n - 2) + cube(n - 1); }
 
 int sum2(int x, int y) 
@@ -68,16 +56,18 @@ int sum2(int x, int y)
 }
 
 int sqr1(int a) { return a * a; }
+
 int sqr2(double a) { return (int)(a * a); }
+
 double sqr3(int a) { return a * a; }
+
 double sqr4(double a) { return a * a; }
 
 void fun6(void) 
 {
     int j;
-    for (j = 1; j < 3; j++) {
+    for (j = 1; j < 3; j++) 
         printf("%d\t", ++j);
-    }
 }
 
 int fun7(int a, int b) { return a + b; }
@@ -86,7 +76,12 @@ int fun8(int x, int y, int z) { return z; }
 
 void display(int a, int b) { printf("%d  %d\n", a, b); }
 
-int fun9(int a, int b) { a = a - 5; b = b + 5; return (!a + --b); }
+int fun9(int a, int b) 
+{ 
+    a = a - 5; 
+    b = b + 5; 
+    return (!a + --b); 
+}
 
 void fun10(int a, int b) { a /= 2; b--; printf("%d\n", a + b); }
 
@@ -116,7 +111,9 @@ int fun14(int n)
 int fun15(int x, int y) { return x - y; }
 
 int f1(int x, int y) { return x + y; }
+
 int f2(int x, int y) { return x - y; }
+
 int func3(int a, int b) {
     int x;
     if (a == b) x = f1(a, b);

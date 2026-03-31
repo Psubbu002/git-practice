@@ -3,7 +3,7 @@ int main()
 {
     int n,q,rem,product=1;
     printf("Enter a Number: ");
-    scanf("%d",&n);
+    scanf("%d",&n);         //246
     if(n == 0) 
     {
         product = 0;   // special case
@@ -19,6 +19,6 @@ int main()
             q = q / 10;
         }
     }
-    printf("Product is %d", product);
+    printf("Product is %d", product);       //48
     return 0;
 }

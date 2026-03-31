@@ -12,6 +12,7 @@ int main()
     {
         scanf("%d",&arr[i]);
     }
+    
     printf("Enter the key element:");
     scanf("%d",&key);
      while (low <= high) 

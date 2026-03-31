@@ -8,6 +8,7 @@ int main()
     scanf("%d",&n);
     printf("Enter matrix size:");
     scanf("%d",&o);
+    
     int arr[m][n];
     printf("Enter the 2D arra:\n");
     for (int i = 0; i < m; i++)
@@ -17,6 +18,7 @@ int main()
   	        scanf("%d", &arr[i][j]);
   	    }
   	}
+
     int (*ptr)[n]=arr;
 	printf("2D array\n");
   	for (int i = 0; i < m; i++)
@@ -27,6 +29,7 @@ int main()
   	    }
   	    printf("\n");
   	}
+
   	printf("3D array\n");
   	int arr1[m][n][o];
     for(int i=0;i<m;i++)
@@ -40,6 +43,7 @@ int main()
         }
         printf("\n");
     }
+
     int (*ptr1)[n][o] = arr1; 
     for(int i=0;i<2;i++)
     {
@@ -53,5 +57,6 @@ int main()
         }
         printf("\n");
     }
+
     return 0;
 }

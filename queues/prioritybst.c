@@ -9,12 +9,13 @@ typedef struct node
 } Node;
 Node* newNode(int data, int priority)        
 {
-    Node* temp = (Node*)malloc(sizeof(Node));
+    Node* temp = malloc(sizeof(Node));
     temp->data = data;
     temp->priority = priority;
     temp->left = temp->right = NULL;
     return temp;
 }
+
 Node* insert(Node* root, int data, int priority) 
 {
     if (root == NULL) 
@@ -31,6 +32,7 @@ Node* insert(Node* root, int data, int priority)
     }
     return root;
 }
+
 Node* findMin(Node* root) 
 {
     while (root && root->left != NULL) 
@@ -39,6 +41,7 @@ Node* findMin(Node* root)
     }
     return root;
 }
+
 Node* deleteMin(Node* root) 
 {
     if (root == NULL) return NULL;
@@ -51,6 +54,7 @@ Node* deleteMin(Node* root)
     root->left = deleteMin(root->left);
     return root;
 }
+
 int peek(Node* root) 
 {
     Node* minNode = findMin(root);
@@ -61,6 +65,7 @@ int peek(Node* root)
     }
     return minNode->data;
 }
+
 void inorder(Node* root) 
 {
     if (root == NULL) return;
@@ -68,6 +73,7 @@ void inorder(Node* root)
     printf("%d:%d ", root->data, root->priority);
     inorder(root->right);
 }
+
 void freeBST(Node* root) 
 {
     if (root == NULL) return;
@@ -75,10 +81,12 @@ void freeBST(Node* root)
     freeBST(root->right);
     free(root);
 }
+
 int isEmpty(Node* root) 
 {
     return (root == NULL);
 }
+
 int main() 
 {
     Node* root = NULL;

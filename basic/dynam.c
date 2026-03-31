@@ -2,7 +2,7 @@
 #include <stdlib.h>
 int main() 
 {
-    int *arr = (int*) malloc(5 * sizeof(int));
+    int *arr = malloc(5 * sizeof(int));
     if (arr == NULL) 
     {
         printf("Memory allocation failed\n");
@@ -11,7 +11,7 @@ int main()
     for (int i = 0; i < 5; i++) 
     {
         arr[i] = i * 2;
-        printf("%d ", arr[i]);
+        printf("%d ", arr[i]);      // 0 2 4 6 8
     }
     free(arr);  
     return 0;

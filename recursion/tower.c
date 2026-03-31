@@ -10,6 +10,7 @@ void toh(int ndisk,char source,char temp,char dest)
     printf("move disk %d from %c-->%c\n",ndisk,source,dest);
     toh(ndisk-1,temp,source,dest);  //end of tail
 }
+
 int main(void)
 {
     char source='A', temp='B',dest='C';

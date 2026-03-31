@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-int main() 
+int main(void) 
 {
     unsigned int a = 8;   // 0000 1000
     int n = 3;
@@ -25,7 +25,7 @@ int main()
     printf("After clearing the %dth bit: %u\n\n", n, a);
 
     a ^= (1 << 2);          // Toggle the 1st bit
-    printf("After toggling the 2st bit: %u\n\n", a);
+    printf("After toggling the 2nd bit: %u\n\n", a);
     
     int x=8;
     int inverted = ~x;    //compliment all bits

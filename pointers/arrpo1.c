@@ -17,10 +17,10 @@ int main()
         printf("%d ", ptr[i]);  
     }
     printf("\n");
-    printf("Address of ptr      : %p\n", (void*)ptr);
-    printf("Value at *ptr       : %d\n", *ptr);
-    printf("Address of arr      : %p\n", (void*)arr);
-    printf("Value at *arr       : %d\n", *arr);
+    printf("Address of ptr      : %p\n", (void*)ptr);       //add
+    printf("Value at *ptr       : %d\n", *ptr);             //1st elemet
+    printf("Address of arr      : %p\n", (void*)arr);       //add
+    printf("Value at *arr       : %d\n", *arr);             //1st element
 
     printf("Sizes:\n");
     printf("sizeof(*ptr)   = %zu\n", sizeof(*ptr));   // size of int

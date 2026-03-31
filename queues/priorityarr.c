@@ -13,11 +13,12 @@ void enqueue(int value, int priority)
 {
     if (size >= MAX) 
     {
-        printf("Queue is full. Cannot insert more elements.\n");
+        printf("Queue is full.Cannot insert more elements\n");
         return;
     }
     pr[size++] = (struct item){value, priority};
 }
+
 int peek() 
 {
     int lowestPriority = INT_MAX;
@@ -33,6 +34,7 @@ int peek()
     }
     return ind;
 }
+
 void dequeue() 
 {
     if (size == 0) 
@@ -47,6 +49,7 @@ void dequeue()
     }
     size--;
 }
+
 int compare(const void* a, const void* b) 
 {
     struct item* item1 = (struct item*)a;
@@ -57,6 +60,7 @@ int compare(const void* a, const void* b)
     }
     return item1->priority - item2->priority; 
 }
+
 void display() 
 {
     if (size == 0) 
@@ -73,6 +77,7 @@ void display()
         printf("Value: %d, Priority: %d\n", temp[i].value, temp[i].priority);
     }
 }
+
 void getHighestPriority() 
 {
     if (size == 0) 
@@ -83,7 +88,8 @@ void getHighestPriority()
     int ind = peek();
     printf("Element with highest priority: Value = %d, Priority = %d\n", pr[ind].value, pr[ind].priority);
 }
-int main() 
+
+int main(void) 
 {
     int choice, value, priority;
     printf("\t Priority Queue Menu \n");

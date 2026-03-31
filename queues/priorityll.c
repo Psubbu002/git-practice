@@ -8,7 +8,7 @@ typedef struct node
 } Node;
 Node* newNode(int d, int p) 
 {
-    Node* temp = (Node*)malloc(sizeof(Node));
+    Node* temp = malloc(sizeof(Node));
     temp->data = d;
     temp->priority = p;
     temp->next = NULL;

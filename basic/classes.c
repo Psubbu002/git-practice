@@ -13,15 +13,15 @@ void ext()
 int main()
 {
     auto int a=10;
-    printf("Auto variable :%d\n",a);
-    count();
-    count();
+    printf("Auto variable :%d\n",a);   //10
+    count();    //11
+    count();    //12
     register int i;
-    printf("Register:\n");
+    printf("Register:\n"); 
     for(i=2;i<5;i++)
     {
-        printf("%d\n",i*2);
+        printf("%d\n",i*2);         // 4 6 8
     }
-    ext();
+    ext();   //30
     return 0; 
 }

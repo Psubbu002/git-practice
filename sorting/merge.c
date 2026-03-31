@@ -51,7 +51,7 @@ void mergeSort(int arr[], int left, int right)
         merge(arr, left, mid, right);
     }
 }
-int main() 
+int main(void) 
 {
     int n;
     printf("Enter size:");

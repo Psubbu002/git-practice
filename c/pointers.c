@@ -1,7 +1,6 @@
 #include <stdio.h>
 int main(void)
 {
-   
     int a=5,*ptr;
     ptr=&a;
     printf("enter a number");   
@@ -18,6 +17,7 @@ int main(void)
     {
         printf("%p\n",arr+i);   //0061FF00 0061FF04 0061FF08 0061FF0C 0061FF10
     }
+
     printf("enter 5 numbers:\n");
     for(int i=0;i<5;i++)
     {
@@ -123,10 +123,10 @@ int main(void)
    float a=5,*p,**pp;
     p=&a;
     pp=&p;
-    printf("%f\t%p\t%p\n",a,p,pp);
+    printf("%f\t%p\t%p\n",a,p,pp);      //5.000000    1000    2000
     a=a+1;
     p=p+1;
     pp=pp+1;
-    printf("%f\t%d\t%d\n",a,p,pp);
+    printf("%f\t%d\t%d\n",a,p,pp);      //6.000000    1004    2004
     return 0;
 }

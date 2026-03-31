@@ -6,18 +6,21 @@ typedef struct
     int data;
     int priority; 
 } Element;
+
 typedef struct 
 {
     Element heap[MAX];
     int size;
     int mode; 
 } PriorityQueue;
+
 void swap(Element* a, Element* b) 
 {
     Element temp = *a;
     *a = *b;
     *b = temp;
 }
+
 int compare(PriorityQueue* pq, int i, int j) 
 {
     if (pq->mode == 1) 
@@ -29,6 +32,7 @@ int compare(PriorityQueue* pq, int i, int j)
         return pq->heap[i].priority > pq->heap[j].priority; 
     }
 }
+
 void heapifyUp(PriorityQueue* pq, int index) 
 {
     int parent = (index - 1) / 2;
@@ -38,6 +42,7 @@ void heapifyUp(PriorityQueue* pq, int index)
         heapifyUp(pq, parent);
     }
 }
+
 void heapifyDown(PriorityQueue* pq, int index) 
 {
     int left = 2 * index + 1;
@@ -57,6 +62,7 @@ void heapifyDown(PriorityQueue* pq, int index)
         heapifyDown(pq, target);
     }
 }
+
 void insert(PriorityQueue* pq, int data, int priority) 
 {
     if (pq->size >= MAX) 
@@ -69,6 +75,7 @@ void insert(PriorityQueue* pq, int data, int priority)
     heapifyUp(pq, pq->size);
     pq->size++;
 }
+
 Element peek(PriorityQueue* pq) 
 {
     if (pq->size == 0) 
@@ -79,6 +86,7 @@ Element peek(PriorityQueue* pq)
     }
     return pq->heap[0];
 }
+
 void deleteTop(PriorityQueue* pq) 
 {
     if (pq->size == 0) 
@@ -90,6 +98,7 @@ void deleteTop(PriorityQueue* pq)
     pq->size--;
     heapifyDown(pq, 0);
 }
+
 void display(PriorityQueue* pq) 
 {
     if (pq->size == 0) 
@@ -104,7 +113,8 @@ void display(PriorityQueue* pq)
     }
     printf("\n");
 }
-int main() 
+
+int main(void) 
 {
     PriorityQueue pq;
     pq.size = 0;

@@ -55,9 +55,11 @@ int main(void)
     //Accessing a structure
     struct student s1={"subbu",23,90.5},s2,s3,s4;
     s4=s1;
+
     strcpy(s2.name,"raycha");
     s2.roll=22;
     s2.marks=95;
+
     printf("Enter the details of student s3:\n");
     printf("Name:");
     scanf("%s",s3.name);
@@ -65,10 +67,12 @@ int main(void)
     scanf("%d",&s3.roll);
     printf("Marks:");
     scanf("%d",&s3.marks);
+
     printf("Student 1:%s\t\t%d\t%d\n",s1.name,s1.roll,s1.marks);
     printf("Student 2:%s\t%d\t%d\n",s2.name,s2.roll,s2.marks);
     printf("Student 3:%s\t%d\t%d\n",s3.name,s3.roll,s3.marks);
     printf("Student 4:%s\t\t%d\t%d\n",s4.name,s4.roll,s4.marks);
+    
     printf("size of structure :%zu\n",sizeof(struct student));
    
     //Arrays within a array of structure 

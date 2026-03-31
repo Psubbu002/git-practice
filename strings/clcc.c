@@ -4,11 +4,13 @@ void copy(char *src, char *dest)
 {
     while (*dest++= *src++ );
 }
+
 int findLen(char* src) 
 {
   	if (!*src) return 0;
   	return 1 + findLen(src + 1);
 }
+
 void concat(char *src, char *src2) 
 {
     while (*src)
@@ -21,6 +23,7 @@ void concat(char *src, char *src2)
     }
     *src = '\0';
 }
+
 int main() 
 {
     char src[20];

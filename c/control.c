@@ -4,54 +4,43 @@ int main(void)
    
     int a=5;
     if(a=9)
-    {
-        printf("a is 9\n");
-    }
-    else{
+        printf("a is 9\n");  //a is 9
+    else
         printf("a is 5\n");
-    }
     printf("a value is %d\n",a);//a vlaue is 9
 
     int z=10;
     z==50;
-    if(z==50){
+    if(z==50)
         printf("i is 50\n");
-    }
-    else{
+    else
         printf("i is not 50\n");//i is not 50
-    }
 
     int d=9,b=0,c=0;
-    if(!d<10  && !b||c){
+    if(!d<10  && !b||c) //(0<10 && 1||0)=(1 && 1)=1
         printf("C in depth\n");//C in depth
-    }
-    else{
+    else
         printf("see in depth\n");
-    }
 
     int e=0;
-    if(e=0){
+    if(e=0)
         printf("e is 0\n");
-    }
-    else{
+    else
         printf("e is not 0\n");//e is not 0
-    }
     printf("the vlaue os e is %d\n",e);//the value of e is 0
 
     int f=20,g=5;
-    if(f<10){
-        a=a-5;
+    if(f<10){  //false
+        a=a-5; 
         b=b+5;
     }
     printf("%d %d\n",f,g);//20 5
 
     int h=0,i=0;
-    if(!h)
-    {
-        i=!h;
-        if(i){
-            h=!i;
-        }
+    if(!h) { 
+        i=!h; //1
+        if(i)
+            h=!i;  //0
     }
     printf("%d %d\n",h,i);//0 1
    
@@ -72,7 +61,7 @@ int main(void)
     int var=2,x=1,y=2;
     switch(var)
     {
-        //case x:
+        //case x:  error : variable can't be used 
         x++;
         break;
         //case y:
@@ -133,63 +122,48 @@ int main(void)
     for(i=0;i<5;i++)
     {
         for(j=i;j>0;j--)
-        {
-            x=i+j+1;
-        }
+            x=i+j+1;  //4+1+1
     }
     printf("x=%d\n",x); // x=6
    
     int sum,i;
-    for(i=0;i<10;i+=3);
-    {
-        sum+=i*i;
-    }
+    for(i=0;i<10;i+=3); 
+    sum+=i*i;  //12*12
     printf("sum=%d\n",sum); // sum=144
  
-
     int i;
     for(i=0;i<5;i++)
-    {
         printf("%d ",i); // 0,1,2,3,4
-    }
     printf("\n");
+
     i=10;
-    while(i<5)
-    {
+    while(i<5) //false
         printf("%d ",i++);
-    }
     printf("\n");
+
     i=0;
     while(i<5)
-    {
         printf("%d ",i++); // 0,1,2,3,4
-    }
    
-
     int i=1;
     while(i++ < 5)
-    {
         printf("%d ", i);//2,3,4,5
-    }
     printf("\n");
+
     i=1;
     while(++i < 5)
-    {
         printf("%d ",i);//2,3,4
-    }
     printf("\n");
+
     i=6;
     while(i--)
-    {
         printf("%d ",i);//5,4,3,2,1,0
-    }
-   
 
     int i=0;
     do
     {
         i++;
         printf("%d",i);
-    } while (i<=5);
+    } while (i<=5); //false
    return 0;
 }

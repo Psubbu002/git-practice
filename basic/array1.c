@@ -13,7 +13,7 @@ void printStrongNumbers(int arr[], int size);
 int isStrong(int num);
 void printSecondLargest(int arr[], int size);
 void selectionSort(int arr[], int size);
-int main() 
+int main(void) 
 {
     int arr[MAX], size, choice, pos, element;
     printf("Enter the size of array: ");
@@ -63,7 +63,8 @@ int main()
         case 6:
             deleteDuplicates(arr, &size);
             printf("Array after deleting duplicates: ");
-            for (int i = 0; i < size; i++) {
+            for (int i = 0; i < size; i++) 
+            {
                 printf("%d ", arr[i]);
             }
             printf("\n");
